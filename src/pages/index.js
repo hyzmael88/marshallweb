@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
 import Acerca from '@/components/Acerca'
 import HotspotImage from '@/components/HotspotImage'
+import Proceso from '@/components/Proceso'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,6 +15,7 @@ export default function Home() {
     <Hero/>
     <Acerca/>
     <HotspotImage/>
+    <Proceso/>
    </main>
   )
 }

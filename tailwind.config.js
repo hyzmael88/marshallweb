@@ -9,7 +9,9 @@ module.exports = {
     extend: {
       colors:{
         'brand-primary': "#EC2F2F",
-        "brand-secondary": "#233E9E"
+        "brand-secondary": "#233E9E",
+        "brand-tertiary": "#3D65F3"
+
       },
       fontFamily:{
         "header": "Roboto, sans-serif",

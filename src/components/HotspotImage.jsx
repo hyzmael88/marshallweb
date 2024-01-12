@@ -14,7 +14,7 @@ function HotspotImage() {
         </div>
         <div className='w-full h-full flex flex-col items-end justify-center'>
 
-            <div className='w-[532px] h-[640px] rounded-[69px] bg-gray-300'></div>
+            <div className='w-[532px] h-[640px] rounded-[69px] bg-gray-300 shadow-brand'></div>
         </div>
        
 
