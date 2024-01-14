@@ -7,6 +7,7 @@ import HotspotImage from '@/components/HotspotImage'
 import Proceso from '@/components/Proceso'
 import Productos from '@/components/Productos'
 import Testimonios from '@/components/Testimonios'
+import Contacto from '@/components/Contacto'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,6 +21,7 @@ export default function Home() {
     <Proceso/>
     <Productos/>
     <Testimonios/>
+    <Contacto/>
    </main>
   )
 }
