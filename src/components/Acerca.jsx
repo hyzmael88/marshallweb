@@ -21,10 +21,10 @@ function Acerca() {
     ]
 
     return (
-        <div className='w-full h-full flex flex-col justify-center items-center pt-[91px] pb-[75px] gap-[57px]'>
-                <h2 className='font-header font-bold text-[48px] w-[856px] text-center'>Descubre la más alta calidad
+        <div className='w-full h-full flex flex-col justify-center items-center pt-[91px] pb-[75px] gap-[57px] px-4 lg:px-14'>
+                <h2 className='font-header font-bold text-[48px] w-full lg:w-[856px] text-center'>Descubre la más alta calidad
 de trapo industrial en el mercado</h2>
-<div className='w-full h-full flex flex-row justify-between items-center px-14'>
+<div className='w-full h-full flex flex-col lg:flex-row justify-between items-center '>
     {
         info.map((item, index) => (
             <div key={index} className='w-[353px] h-[278px] rounded-[19px] bg-[#3D65F3]/30

@@ -3,19 +3,19 @@ import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 function Hero() {
   return (
-    <div className="w-full px-14 h-[900px] flex flex-row">
+    <div className="w-full px-4 lg:px-14 h-[900px] flex flex-col lg:flex-row ">
       <div className="w-full h-full flex flex-col justify-center items-center">
         <div className="w-full flex flex-col gap-[24px]">
-          <h1 className="font-header font-bold leading-[67px] text-[56px] w-[576px]">
+          <h1 className="font-header font-bold leading-[67px] text-[56px] w-full lg:w-[576px] text-center lg:text-start">
             Descubra el poder de nuestras soluciones de limpieza
           </h1>
-          <p className="w-[576px] font-paragraph text-[18px] font-normal leading-[27px]">
+          <p className="w-full lg:w-[576px] font-paragraph text-[18px] font-normal leading-[27px] text-center lg:text-start">
             Experimenta la más alta calidad de trapo industrial en el mercado,
             que harán la diferencia en tu negocio gracias a nuestra eficacia y
             versatilidad mejorando la productividad y eficiencia de tus
             instalaciones.
           </p>
-          <div className="w-full  flex flex-row justify-start items-center gap-[8px]">
+          <div className="w-full  flex flex-row justify-center lg:justify-start items-center gap-[8px]">
             <button className="bg-brand-primary shadow-brand w-[139px] rounded-[10px] text-white px-[24px] py-[12px]">
               Descubre
             </button>

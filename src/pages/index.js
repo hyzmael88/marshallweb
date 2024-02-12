@@ -8,6 +8,8 @@ import Proceso from '@/components/Proceso'
 import Productos from '@/components/Productos'
 import Testimonios from '@/components/Testimonios'
 import Contacto from '@/components/Contacto'
+import Footer from '@/components/Footer'
+import Jaizmora from '@/components/Jaizmora'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,6 +24,8 @@ export default function Home() {
     <Productos/>
     <Testimonios/>
     <Contacto/>
+    <Footer/>
+    <Jaizmora/>
    </main>
   )
 }

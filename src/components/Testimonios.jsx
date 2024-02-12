@@ -32,11 +32,11 @@ function Testimonios() {
     ]
 
   return (
-    <div className='w-full h-[658px] flex flex-col items-center gap-[40px] px-14 overflow-hidden'>
+    <div className='w-full h-[658px] flex flex-col items-center gap-[40px] px-4 lg:px-14 overflow-hidden'>
        
       <div className="flex flex-col items-center">
-        <h3 className="font-header font-bold text-[48px]">Clientes satisfechos</h3>
-        <h4 className="font-header font-bold text-[24px]">
+        <h3 className="font-header font-bold text-[48px]  text-center lg:text-start">Clientes satisfechos</h3>
+        <h4 className="font-header font-bold text-[24px] text-center lg:text-start">
         ¡Descubre por qué somos la elección preferida de nuestros clientes!
         </h4>
       </div>

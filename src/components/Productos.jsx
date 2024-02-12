@@ -55,10 +55,10 @@ function Productos() {
   const [posicion, setPosicion] = useState(0 )
 
   return (
-    <div className="w-full h-[916px] flex flex-col  items-center gap-[40px] px-14 overflow-hidden ">
+    <div className="w-full h-[916px] flex flex-col  items-center gap-[40px] px-4 lg:px-14 overflow-hidden ">
       <div className="flex flex-col items-center">
         <h3 className="font-header font-bold text-[48px]">Productos</h3>
-        <h4 className="font-header font-bold text-[24px]">
+        <h4 className="font-header font-bold text-[24px] text-center lg:text-start">
           Conoce los tipos de trapo que manejamos y ¡cotiza hoy mismo!
         </h4>
       </div>
