@@ -53,16 +53,18 @@ function Productos() {
   ];
 
   const [posicion, setPosicion] = useState(0 )
+  console.log(posicion)	
+
 
   return (
-    <div className="w-full h-full lg:h-[916px] flex flex-col  items-center gap-[40px] px-4 lg:px-14 overflow-hidden ">
+    <div className="w-full h-full lg:h-[916px] flex flex-col  items-center gap-[40px] px-4 lg:px-14  ">
       <div className="flex flex-col items-center">
         <h3 className="font-header font-bold text-[48px]">Productos</h3>
         <h4 className="font-header font-bold text-[16px] lg:text-[24px] text-center lg:text-start">
           Conoce los tipos de trapo que manejamos y ¡cotiza hoy mismo!
         </h4>
       </div>
-      <div className="w-full  flex flex-row items-center gap-[24px]  lg:gap-[48px]">
+      <div  id="slider" className="w-full  flex flex-row items-center gap-[24px]  lg:gap-[48px]  ">
         {productos.map((producto, index) => (
           <div
             key={index}
@@ -82,16 +84,21 @@ function Productos() {
         ))}
       </div>
       <div className="w-full flex flex-row justify-between ">
-        <div className="flex flex-row gap-[8px] items-center">
+        <div  className="flex flex-row gap-[8px] items-center">
           {
             productos.map((producto, index) => (
-              <div key={index} className={`${index == posicion && "bg-[#000000]"} w-[8px] h-[8px] rounded-full bg-[#CCCCCC] `}/>
-
+              <div key={index} className={`
+              ${index == posicion && "bg-[#000000] w-[8px] h-[8px] rounded-full"}
+              ${index != posicion && "bg-[#CCCCCC] w-[8px] h-[8px] rounded-full"} 
+              
+              `}/>
             ))
           }
         </div>
         <div className="flex flex-row items-center gap-[15px]">
-          <div className="w-[48px] h-[48px] flex flex-col items-center justify-center rounded-full border-2 border-[#3D65F3]">
+          <div className="w-[48px] h-[48px] flex flex-col items-center justify-center rounded-full border-2 border-[#3D65F3] cursor-pointer"
+          onClick={()=> setPosicion(posicion-1)}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -105,7 +112,9 @@ function Productos() {
               />
             </svg>
           </div>
-          <div className="w-[48px] h-[48px] flex flex-col items-center justify-center rounded-full border-2 border-[#3D65F3]">
+          <div className="w-[48px] h-[48px] flex flex-col items-center justify-center rounded-full border-2 border-[#3D65F3] cursor-pointer"
+           onClick={()=> setPosicion(posicion+1)}
+           >
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
   <path d="M12 4.51111L10.59 5.92111L16.17 11.5111H4V13.5111H16.17L10.59 19.1011L12 20.5111L20 12.5111L12 4.51111Z" fill="black"/>
 </svg>

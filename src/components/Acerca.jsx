@@ -1,8 +1,8 @@
 import React from 'react'
 import Image from 'next/image'
-import calidad from '../assets/icons/Acerca/calidad.svg'
-import garantizado from '../assets/icons/Acerca/garantizado.svg'
-import lideres from '../assets/icons/Acerca/lideres.svg'
+import calidad from '../../public/images/Acerca/calidad.svg'
+import garantizado from '../../public/images/Acerca/garantizado.svg'
+import lideres from '../../public/images/Acerca/lideres.svg'
 function Acerca() {
 
     const info = [
