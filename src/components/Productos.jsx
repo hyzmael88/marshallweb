@@ -62,13 +62,13 @@ function Productos() {
           Conoce los tipos de trapo que manejamos y ¡cotiza hoy mismo!
         </h4>
       </div>
-      <div className="w-full  flex flex-row items-center  gap-[48px]">
+      <div className="w-full  flex flex-row items-center gap-[24px]  lg:gap-[48px]">
         {productos.map((producto, index) => (
           <div
             key={index}
-            className="w-full h-full  flex flex-col gap-[16px]  justify-center"
+            className="w-full h-full flex flex-col gap-[16px]  justify-center"
           >
-            <div className="w-[400px] h-[486px] rounded-[40px] bg-gray-400" />
+            <div className="w-[300px] lg:w-[400px] h-[360px] lg:h-[486px] rounded-[20px] lg:rounded-[40px] bg-gray-400" />
             <div className=" flex flex-col gap-[8px] ">
               <h5 className="font-header font-semibold text-[18px]">
                 {producto.nombre}

@@ -19,11 +19,11 @@ function Proceso() {
     }
     ]
   return (
-    <div className='px-4 lg:px-14 w-full h-[605px] flex flex-col lg:flex-row justify-between items-center'>
+    <div className='w-full px-4 lg:px-14 h-full lg:h-[605px] flex flex-col lg:flex-row justify-between items-center py-[60px] gap-8 lg:gap-0'>
         <div className='w-full h-full flex flex-col items-center lg:items-start justify-center'>
-        <div className='w-full lg:w-[629px] h-[411px] rounded-[19px] bg-[#233E9E] flex flex-col  justify-center px-8'>
-            <h4 className='font-header text-white text-[24px] font-medium'>Experimenta la diferencia</h4>
-            <h3 className='text-white text-[48px] font-header font-bold leading-[57px] '>Cotiza, paga y recibe tu producto con facilidad. ¡Así de simple!</h3>
+        <div className='w-full lg:w-[629px] h-[270px] lg:h-[411px] rounded-[19px] bg-[#233E9E] flex flex-col  justify-center px-8'>
+            <h4 className='font-header text-white text-[15px] lg:text-[24px] font-medium'>Experimenta la diferencia</h4>
+            <h3 className='w-full lg:w-[721px] font-header text-[32px] lg:text-[49px] font-bold leading-[38px] lg:leading-[59px] text-white '>Cotiza, paga y recibe tu producto con facilidad. ¡Así de simple!</h3>
         </div>
         </div>
         
@@ -31,18 +31,20 @@ function Proceso() {
                 {
                     info.map((item, index) => (
                         <div key={index}>
-                        <div  className='w-full lg:w-[616px] h-[91px] flex flex-row items-center bg-brand-tertiary/30 rounded-[19px] gap-8'>
-                    <div className='h-full flex flex-col justify-center ml-[27px]'>
+                        <div  className='w-full lg:w-[616px] h-[200px] lg:h-[91px] flex flex-col lg:flex-row items-center bg-brand-tertiary/30 rounded-[19px] lg:gap-8 py-4 lg:py-0'>
+                    <div className='h-full flex flex-col justify-center lg:ml-[27px]'>
                         {item.icon}
                     </div>
-                    <div className='flex flex-col'>
+                    <div className='w-full h-full flex flex-row lg:flex-col text-center'>
                         <div>
                             <h3 className='font-header font-bold text-[20px] '>{item.title}</h3>
-                            <p className='font-paragraph text-[16px] w-full lg:w-[477px] '>{item.description}</p>
+                            <p className='font-paragraph text-[16px] w-full lg:w-[477px] px-8 lg:px-[0px] '>{item.description}</p>
                         </div>
                     </div>
                 </div>
-                <div className={`${index < info.length-1 ? 'w-[3px] h-[48px] bg-brand-tertiary my-3 ml-[40px]' : 'hidden'}`}></div>
+                <div className='w-full flex flex-row justify-center'>
+                <div className={`${index < info.length-1 ? 'w-[3px] h-[48px] bg-brand-tertiary my-3 lg:ml-[40px]' : 'hidden'}`}></div>
+                    </div>
                 </div>
                 
                     ))
