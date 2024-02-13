@@ -1,20 +1,23 @@
 import React from 'react'
-
+import Image from 'next/image'
+import calidad from '../assets/icons/Acerca/calidad.svg'
+import garantizado from '../assets/icons/Acerca/garantizado.svg'
+import lideres from '../assets/icons/Acerca/lideres.svg'
 function Acerca() {
 
     const info = [
         {
-            icon: 'icono',
+            icon: calidad,
             title: 'Calidad desde el primer contacto',
             description: 'Nuestros productos son laborados con materiales de la más alta calidad, brindando una limpieza superior y eficiente.'
         },
         {
-            icon: 'icono',
+            icon: garantizado,
             title: 'Líderes en venta de trapo',
             description: 'Más de 24 años consolidados como un referente en la industria de la limpieza. Dando soluciones y superando expectativas.'
         },
         {
-            icon: 'icono',
+            icon: lideres,
             title: 'Producto 100% garantizado',
             description: 'Nuestro producto es el compañero confiable para mantener la precisión y limpieza en tu oficio al más alto nivel.'
         },
@@ -29,9 +32,9 @@ de trapo industrial en el mercado</h2>
         info.map((item, index) => (
             <div key={index} className='w-[353px] h-[278px] rounded-[19px] bg-[#3D65F3]/30
             flex flex-col items-center justify-center
-            shadow-brand
+            shadow-brand gap-3
             '>
-                <span>{item.icon}</span>
+                <Image src={item.icon} alt='icon' width={48} height={48} />
                 <h3 className='w-[60%] font-header font-bold text-[28px] text-center '>{item.title}</h3>
                 <p className=' w-[90%] font-paragraph text-[16px] text-center'>{item.description}</p>
                 

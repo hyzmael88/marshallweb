@@ -13,7 +13,7 @@ function Contacto() {
                         <h3 className='text-[48px] font-header font-bold'>Contáctanos</h3>
                         <h5 className='text-[18px] font-header'>Experimenta la calidad de nuestras soluciones de limpieza.</h5>
                         </div>
-        <div id='form' className=' h-full flex flex-col gap-[24px]'>
+        <div id='form' className='  flex flex-col gap-[24px]'>
                 <div className='flex flex-col gap-[8px]' >
                 <label>Nombre</label>
             <input className=' w-full lg:w-[616px] h-[48px] rounded-[4px] lg:rounded-[14px] text-black font-paragraph px-4 '

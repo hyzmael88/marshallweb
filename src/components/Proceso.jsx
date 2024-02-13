@@ -1,19 +1,24 @@
 import React from 'react'
+import aprueba from '../../public/images/Proceso/aprueba.svg'
+import cotiza from '../../public/images/Proceso/cotiza.svg'
+import recibe from '../../public/images/Proceso/recibe.svg'
+import Image from 'next/image'
+
 
 function Proceso() {
     const info = [
     {
-        icon: 'icono',
+        icon: aprueba,
         title: 'Cotiza el producto que deseas',
         description: 'Llámanos o mándanos mensaje por redes sociales o correo y te atenderemos al instante.'
     },
     {
-        icon: 'icono',
+        icon: cotiza,
         title: 'Aprueba y paga la cotización',
         description: 'Una vez realizado el pago, preparamos la entrega de tu pedido a la dirección solicitada.'
     },
     {
-        icon: 'icono',
+        icon: recibe,
         title: 'Recibe tu producto',
         description: 'Tras la entrega del producto, agradeceríamos nos dejes una reseña de tu parte.'
     }
@@ -33,9 +38,9 @@ function Proceso() {
                         <div key={index}>
                         <div  className='w-full lg:w-[616px] h-[200px] lg:h-[91px] flex flex-col lg:flex-row items-center bg-brand-tertiary/30 rounded-[19px] lg:gap-8 py-4 lg:py-0'>
                     <div className='h-full flex flex-col justify-center lg:ml-[27px]'>
-                        {item.icon}
+                        <Image src={item.icon} alt='icon' width={48} height={48} />
                     </div>
-                    <div className=' h-full flex flex-row lg:flex-col text-center lg:text-left'>
+                    <div className=' h-full flex flex-row lg:flex-col text-center justify-center lg:text-left'>
                         <div>
                             <h3 className='font-header font-bold text-[20px] '>{item.title}</h3>
                             <p className='font-paragraph text-[16px] w-full lg:w-[477px] px-8 lg:px-[0px] '>{item.description}</p>
