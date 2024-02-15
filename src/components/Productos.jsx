@@ -64,7 +64,7 @@ function Productos() {
           Conoce los tipos de trapo que manejamos y ¡cotiza hoy mismo!
         </h4>
       </div>
-      <div  id="slider" className="w-full  flex flex-row items-center gap-[24px]  lg:gap-[48px]  ">
+      <div  id="slider" className="w-full  flex flex-row items-center gap-[24px]  lg:gap-[48px]  overflow-x-scroll no-scrollbar ">
         {productos.map((producto, index) => (
           <div
             key={index}

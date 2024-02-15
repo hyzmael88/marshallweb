@@ -36,12 +36,12 @@ function Proceso() {
                 {
                     info.map((item, index) => (
                         <div key={index}>
-                        <div  className='w-full lg:w-[616px] h-[200px] lg:h-[91px] flex flex-col lg:flex-row items-center bg-brand-tertiary/30 rounded-[19px] lg:gap-8 py-4 lg:py-0'>
+                        <div  className='w-full lg:w-full h-[200px] lg:h-[91px] flex flex-col lg:flex-row items-center bg-brand-tertiary/30 rounded-[19px] lg:gap-8 py-4 lg:py-0'>
                     <div className='h-full flex flex-col justify-center lg:ml-[27px]'>
                         <Image src={item.icon} alt='icon' width={48} height={48} />
                     </div>
                     <div className=' h-full flex flex-row lg:flex-col text-center justify-center lg:text-left'>
-                        <div>
+                        <div className='w-full lg:mr-4'>
                             <h3 className='font-header font-bold text-[20px] '>{item.title}</h3>
                             <p className='font-paragraph text-[16px] w-full lg:w-[477px] px-8 lg:px-[0px] '>{item.description}</p>
                         </div>
