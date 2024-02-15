@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 function Productos() {
   const productos = [
@@ -55,6 +55,18 @@ function Productos() {
   const [posicion, setPosicion] = useState(0 )
   console.log(posicion)	
 
+
+  
+  const handleScroll = () => {
+    const slider = document.getElementById("slider");
+    if (slider) {
+      slider.scrollLeft = posicion * 445;
+    }
+  };
+
+  useEffect(() => {
+    handleScroll();
+  }, [posicion]);
 
   return (
     <div className="w-full h-full lg:h-[916px] flex flex-col  items-center gap-[40px] px-4 lg:px-14  ">
