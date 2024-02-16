@@ -32,7 +32,7 @@ function Testimonios() {
     ]
 
   return (
-    <div className='w-full h-full lg:h-[658px] flex flex-col items-center gap-[40px] px-4 lg:px-14 py-[64px] overflow-hidden'>
+    <div className='w-full h-full lg:h-[658px] flex flex-col items-center gap-[40px] px-4 lg:px-10 xl:px-14 py-[64px] overflow-hidden'>
        
       <div className="flex flex-col items-center">
         <h3 className="font-header font-bold text-[36px] lg:text-[48px]  text-center lg:text-start">Clientes satisfechos</h3>
@@ -45,7 +45,7 @@ function Testimonios() {
             testimonios.map((testimonio, index) => (
 
                 
-                <div key={index} className='h-[350px] lg:h-[330px] w-[90%] lg:w-[416px] flex flex-col justify-center
+                <div key={index} className='h-[350px] lg:h-[350px] xl:h-[330px] w-[90%] lg:w-[340px] xl:w-[416px] flex flex-col justify-center
                 bg-[#3d64f33a] rounded-[25px] p-[24px] lg:p-[32px] gap-[32px]
                 '>
             <div className='flex flex-row items-center gap-[4px]'>
@@ -53,7 +53,7 @@ function Testimonios() {
                 <span key={i}>{estrella}</span> // &#9733; es el código HTML para una estrella
                 ))}
             </div>
-            <p className='w-[290px] lg:w-[352px] text-[16px] lg:text-[18px] leading-[27px] font-paragraph '>
+            <p className='w-[290px] xl:w-[352px] text-[16px] lg:text-[18px] leading-[27px] font-paragraph '>
                 {testimonio.testimonio}
                 </p>
                 <div className='flex flex-col'>
@@ -64,6 +64,7 @@ function Testimonios() {
                 ))
             }
       </div>
+      
 
     </div>
   )
