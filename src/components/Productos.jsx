@@ -93,7 +93,7 @@ function Productos() {
           >
             <div className="w-[300px] lg:w-[320px] xl:w-[355px] 2xl:w-[400px] h-[360px] 2xl:h-[486px] rounded-[20px] lg:rounded-[40px] bg-gray-400" />
             <div className=" flex flex-col gap-[8px] ">
-              <h5 className="font-header font-semibold text-[18px]">
+              <h5 className="font-header font-semibold text-[18px] h-[30px]">
                 {producto.nombre}
               </h5>
               <div className="h-[14px]"></div>
