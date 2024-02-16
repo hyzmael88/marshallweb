@@ -15,7 +15,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
-   <main className='w-full h-full max-w-[1444px] mx-auto relative'>
+   <main className='w-full h-full max-w-[1444px] mx-auto relative min-w-[354px]'>
     <Navbar/>
     <Hero/>
     <Acerca/>

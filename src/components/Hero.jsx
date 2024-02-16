@@ -16,10 +16,10 @@ function Hero() {
             instalaciones.
           </p>
           <div className="w-full  flex flex-row justify-center lg:justify-start items-center gap-[8px]">
-            <button className="bg-brand-primary shadow-brand w-[139px] rounded-[10px] text-white px-[24px] py-[12px]">
+            <button className="bg-brand-primary shadow-brand w-[139px] rounded-[10px] text-white px-[24px] py-[12px] hover:scale-105 transition-all duration-300">
               Descubre
             </button>
-            <button className="bg-brand-secondary shadow-brand text-white rounded-[10px] w-[139px] px-[24px] py-[12px]">
+            <button className="bg-brand-secondary shadow-brand text-white rounded-[10px] w-[139px] px-[24px] py-[12px] hover:scale-105 transition-all duration-300">
               Contáctanos
             </button>
           </div>

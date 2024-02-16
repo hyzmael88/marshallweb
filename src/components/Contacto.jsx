@@ -32,7 +32,7 @@ function Contacto() {
                 <label htmlFor='terms'>Acepto los términos y condiciones</label>
             </div>
             <div className='w-full flex flex-row justify-center'>
-            <button className='w-[99px] h-[48px] bg-brand-primary rounded-[8px] lg:rounded-[14px] uppercase '>Enviar</button>
+            <button className='w-[99px] h-[48px] bg-brand-primary rounded-[8px] lg:rounded-[14px] uppercase hover:scale-110 transition-all duration-300 '>Enviar</button>
             </div>
      
     </div>

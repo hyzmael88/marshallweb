@@ -86,7 +86,7 @@ function Productos() {
       </div>
       <div  id="slider" className="hidden w-full  lg:flex flex-row items-center gap-[24px]  lg:gap-[48px] xl:gap- overflow-x-scroll no-scrollbar  ">
         {
-        productos.slice(0,3).map((producto, index) => (
+        productos.slice(0+position,3+position).map((producto, index) => (
           <div
             key={index}
             className="w-full h-full flex flex-col gap-[16px]  justify-center"
@@ -106,19 +106,18 @@ function Productos() {
       </div>
       <div className="w-full hidden lg:flex flex-row justify-between ">
         <div  className="flex flex-row gap-[8px] items-center">
-          {
-            productos.map((producto, index) => (
-              <div key={index} className={`
-              ${index == position && "bg-[#000000] w-[8px] h-[8px] rounded-full"}
-              ${index != position && "bg-[#CCCCCC] w-[8px] h-[8px] rounded-full"} 
-              
-              `}/>
-            ))
-          }
+        {
+  [0, 1].map((index) => (
+    <div key={index} className={`
+      ${index == position % 2 && "bg-[#000000] w-[8px] h-[8px] rounded-full"}
+      ${index != position % 2 && "bg-[#CCCCCC] w-[8px] h-[8px] rounded-full"}
+    `}/>
+  ))
+}
         </div>
         <div className="hidden lg:flex flex-row items-center gap-[15px]">
           <div className={position == 0? "hidden":"w-[48px] h-[48px] flex flex-col items-center justify-center rounded-full border-2 border-[#3D65F3] cursor-pointer"}
-          onClick={()=> setPosition(position-1)}
+          onClick={()=> setPosition(position-3)}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -133,12 +132,9 @@ function Productos() {
               />
             </svg>
           </div>
-          <div className={position == productos.length-1? "hidden":"w-[48px] h-[48px] flex flex-col items-center justify-center rounded-full border-2 border-[#3D65F3] cursor-pointer"}
-           onClick={()=> setPosition(position+1)}
+          <div className={position == productos.length/2? "hidden":"w-[48px] h-[48px] flex flex-col items-center justify-center rounded-full border-2 border-[#3D65F3] cursor-pointer"}
+           onClick={()=> setPosition(position+3)}
            >
-            {
-              console.log(position, productos.length)
-            }
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
   <path d="M12 4.51111L10.59 5.92111L16.17 11.5111H4V13.5111H16.17L10.59 19.1011L12 20.5111L20 12.5111L12 4.51111Z" fill="black"/>
 </svg>
