@@ -40,9 +40,9 @@ function Testimonios() {
         ¡Descubre por qué somos la elección preferida de nuestros clientes!
         </h4>
       </div>
-      <div className='w-full h-full flex flex-row gap-[20px] lg:gap-[32px] overflow-x-scroll no-scrollbar'>
+      <div className='w-full h-full flex flex-row gap-[20px] lg:gap-[32px] justify-between overflow-x-scroll no-scrollbar'>
         {
-            testimonios.map((testimonio, index) => (
+            testimonios.slice(0,3).map((testimonio, index) => (
 
                 
                 <div key={index} className='h-[350px] lg:h-[350px] 2xl:h-[330px] w-[90%] lg:w-[340px] xl:w-[380px] 2xl:w-[416px] flex flex-col justify-center
