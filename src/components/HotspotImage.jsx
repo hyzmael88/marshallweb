@@ -3,7 +3,7 @@ import React from 'react'
 function HotspotImage() {
   return (
     <div className='w-full h-[863px] flex flex-col lg:flex-row justify-between items-center  px-4 lg:px-14 bg-brand-primary'>
-        <div className='w-full h-full flex flex-col items-center justify-center text-white gap-[29px]'>
+        <div className='w-full h-full md:h-[80%] flex flex-col items-center justify-center md: text-white gap-[29px]'>
             <h2 className='w-full lg:w-[721px] font-header text-[32px] lg:text-[49px] font-bold leading-[38px] lg:leading-[59px] '>
             Transforma tu entorno con la limpieza que sólo nuestro producto puede ofrecer 
             </h2>
@@ -14,7 +14,7 @@ function HotspotImage() {
         </div>
         <div className='w-full h-full flex flex-col items-center lg:items-end justify-start lg:justify-center'>
 
-            <div className='w-[335px] h-[348px] lg:w-[532px] lg:h-[640px] rounded-[20px] lg:rounded-[69px] bg-gray-300 shadow-brand'></div>
+            <div className='w-[335px] h-[348px] md:w-full lg:w-[532px] md:h-[400px] lg:h-[640px] rounded-[20px] md:rounded-[40px] lg:rounded-[69px] bg-gray-300 shadow-brand'></div>
         </div>
        
 

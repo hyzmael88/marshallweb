@@ -26,16 +26,16 @@ function Proceso() {
   return (
     <div className='w-full px-4 lg:px-14 h-full lg:h-[605px] flex flex-col lg:flex-row justify-between items-center py-[60px] gap-8 '>
         <div className='w-full h-full flex flex-col items-center lg:items-start justify-center'>
-        <div className='w-full lg:w-[721px] h-[270px] lg:h-[411px] rounded-[19px] bg-[#233E9E] flex flex-col  justify-center px-8'>
-            <h4 className='font-header text-white text-[15px] lg:text-[24px] font-medium'>Experimenta la diferencia</h4>
-            <h3 className='w-full lg:w-[550px] font-header text-[32px] lg:text-[49px] font-bold leading-[38px] lg:leading-[59px] text-white '>Cotiza, paga y recibe tu producto con facilidad. ¡Así de simple!</h3>
+        <div className='w-full lg:w-[721px] h-[270px] lg:h-[411px] rounded-[19px] bg-[#233E9E] flex flex-col  justify-center px-8 md:gap-4 lg:gap-0'>
+            <h4 className='font-header text-white text-[15px] lg:text-[24px] font-medium md:text-center lg:text-start'>Experimenta la diferencia</h4>
+            <h3 className='w-full lg:w-[550px] font-header text-[32px] lg:text-[49px] font-bold leading-[38px] lg:leading-[59px] text-white md:text-center lg:text-start '>Cotiza, paga y recibe tu producto con facilidad. ¡Así de simple!</h3>
         </div>
         </div>
         
             <div className='w-full h-full flex flex-col justify-center items-center   '>
                 {
                     info.map((item, index) => (
-                        <div key={index}>
+                        <div key={index} className='w-full'>
                         <div  className='w-full lg:w-full h-[200px] lg:h-[91px] flex flex-col lg:flex-row items-center bg-brand-tertiary/30 rounded-[19px] lg:gap-8 py-4 lg:py-0'>
                     <div className='h-full flex flex-col justify-center lg:ml-[27px]'>
                         <Image src={item.icon} alt='icon' className='w-[48px] h-[48px] ' />

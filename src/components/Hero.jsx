@@ -29,26 +29,26 @@ function Hero() {
         <div className="w-full h-full  flex flex-col gap-2 transform -translate-y-[77px] lg:-translate-y-[130px] ">
 
           <div className="w-full h-full bg-gray-600 rounded-[20px] lg:rounded-[40px]">
-            <div className="w-[160px] lg:w-[320px] h-[170px] lg:h-[340px]"/>
+            <div className="w-[160px] md:h-[340px] md:w-[150px] lg:w-[320px] h-[170px] lg:h-[340px]"/>
             </div>
             <div className="w-full h-full bg-gray-600 rounded-[20px] lg:rounded-[40px]">
-              <div className="w-[160px] lg:w-[320px] h-[170px] lg:h-[340px]"/>
+              <div className="w-[160px] md:h-[340px] md:w-[150px] lg:w-[320px] h-[170px] lg:h-[340px]"/>
             </div>
             <div className="w-full h-full bg-gray-600 rounded-[20px] lg:rounded-[40px]">
-              <div className="w-[160px] lg:w-[320px] h-[170px] lg:h-[340px]"/>
+              <div className="w-[160px] md:h-[340px] md:w-[150px] lg:w-[320px] h-[170px] lg:h-[340px]"/>
               
             </div>
           
         </div>
         <div className="h-full w-full flex flex-col  gap-2 ">
           <div className="w-full h-full bg-gray-600 rounded-[20px] lg:rounded-[40px]">
-            <div className="w-[160px] lg:w-[320px] h-[170px] lg:h-[340px]"></div>
+            <div className="w-[160px] md:h-[340px] md:w-[150px] lg:w-[320px] h-[170px] lg:h-[340px]"></div>
           </div>
           <div className="w-full h-full bg-gray-600 rounded-[20px] lg:rounded-[40px]">
-            <div className="w-[160px] lg:w-[320px] h-[170px] lg:h-[340px]"></div>
+            <div className="w-[160px] md:h-[340px] md:w-[150px] lg:w-[320px] h-[170px] lg:h-[340px]"></div>
           </div>
           <div className="w-full h-full bg-gray-600 rounded-[20px] lg:rounded-[40px]">
-            <div className="w-[160px] lg:w-[320px] h-[170px] lg:h-[340px]"></div>
+            <div className="w-[160px] md:h-[340px] md:w-[150px] lg:w-[320px] h-[170px] lg:h-[340px]"></div>
           </div>
         </div>
       </div>

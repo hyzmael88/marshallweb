@@ -28,7 +28,7 @@ function Contacto() {
             <textarea className=' w-full lg:w-[616px] h-[183px] rounded-[4px] lg:rounded-[14px] text-black font-paragraph px-4'/>
             </div>
             <div className='flex items-center'>
-                <input type='checkbox' id='terms' className='mr-2' />
+                <input type='checkbox' id='terms' className='mr-4 scale-150' />
                 <label htmlFor='terms'>Acepto los términos y condiciones</label>
             </div>
             <div className='w-full flex flex-row justify-center'>
