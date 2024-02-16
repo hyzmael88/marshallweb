@@ -57,7 +57,7 @@ function Productos() {
   
 
   return (
-    <div className="w-full h-full xl:h-[916px] flex flex-col  items-center gap-[40px] px-4 lg:px-14  ">
+    <div className="w-full h-full 2xl:h-[916px] flex flex-col  items-center gap-[40px] px-4 lg:px-14  ">
       <div className="flex flex-col items-center">
         <h3 className="font-header font-bold text-[48px]">Productos</h3>
         <h4 className="font-header font-bold text-[16px] lg:text-[24px] text-center lg:text-start">
@@ -70,7 +70,7 @@ function Productos() {
             key={index}
             className="w-full h-full flex flex-col gap-[16px]  justify-center"
           >
-            <div className="w-[300px] lg:w-[320px] xl:w-[400px] h-[360px] xl:h-[486px] rounded-[20px] lg:rounded-[40px] bg-gray-400" />
+            <div className="w-[300px] lg:w-[320px] xl:w-[355px] 2xl:w-[400px] h-[360px] 2xl:h-[486px] rounded-[20px] lg:rounded-[40px] bg-gray-400" />
             <div className=" flex flex-col gap-[8px] ">
               <h5 className="font-header font-semibold text-[18px]">
                 {producto.nombre}

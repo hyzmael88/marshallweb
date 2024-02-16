@@ -24,7 +24,7 @@ function Acerca() {
     ]
 
     return (
-        <div className='w-full h-full flex flex-col justify-center items-center pt-[64px] lg:pt-[91px] pb-[48px] lg:pb-[75px] gap-[57px] px-4 lg:px-10 xl:px-0'>
+        <div className='w-full h-full flex flex-col justify-center items-center pt-[64px] lg:pt-[91px] pb-[48px] lg:pb-[75px] gap-[57px] px-4 lg:px-10 2xl:px-0'>
                 <h2 className='font-header font-bold text-[32px] lg:text-[48px] leading-[38px] lg:leading-[57.6px] w-full lg:w-[856px] text-center'>Descubre la más alta calidad
 de trapo industrial en el mercado</h2>
 <div className='w-full h-full flex flex-col lg:flex-row justify-between items-center gap-[48px] lg:gap-[0px] '>

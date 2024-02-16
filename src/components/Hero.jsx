@@ -3,7 +3,7 @@ import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 function Hero() {
   return (
-    <div className="w-full px-4 lg:px-0 xl:px-14 lg:h-screen xl:h-[900px] flex flex-col lg:flex-row lg:pl-8">
+    <div className="w-full px-4 lg:px-0 2xl:px-14 h-screen lg:h-screen 2xl:h-[900px] flex flex-col lg:flex-row lg:pl-8">
       <div className="w-full h-full flex flex-col justify-center items-center">
         <div className="w-full flex flex-col gap-[24px]">
           <h1 className="font-header font-bold leading-[48px] lg:leading-[67px] text-[40px] lg:text-[56px] w-full lg:w-[95%] xl:w-[576px] text-center lg:text-start">
