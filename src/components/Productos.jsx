@@ -54,7 +54,6 @@ function Productos() {
 
   const [position, setPosition] = useState(0)
 
-
   
 
   return (
@@ -65,7 +64,7 @@ function Productos() {
           Conoce los tipos de trapo que manejamos y ¡cotiza hoy mismo!
         </h4>
       </div>
-      <div  id="slider" className="w-full  flex flex-row items-center gap-[24px]  lg:gap-[48px] overflow-x-scroll no-scrollbar ">
+      <div  id="slider" className="w-full  flex flex-row items-center gap-[24px]  lg:gap-[48px] overflow-x-scroll no-scrollbar  ">
         {productos.map((producto, index) => (
           <div
             key={index}
@@ -113,7 +112,7 @@ function Productos() {
               />
             </svg>
           </div>
-          <div className={position == productos.length-3? "hidden":"w-[48px] h-[48px] flex flex-col items-center justify-center rounded-full border-2 border-[#3D65F3] cursor-pointer"}
+          <div className={position == productos.length-1? "hidden":"w-[48px] h-[48px] flex flex-col items-center justify-center rounded-full border-2 border-[#3D65F3] cursor-pointer"}
            onClick={()=> setPosition(position+1)}
            >
             {

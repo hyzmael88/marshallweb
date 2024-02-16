@@ -38,7 +38,7 @@ function Proceso() {
                         <div key={index}>
                         <div  className='w-full lg:w-full h-[200px] lg:h-[91px] flex flex-col lg:flex-row items-center bg-brand-tertiary/30 rounded-[19px] lg:gap-8 py-4 lg:py-0'>
                     <div className='h-full flex flex-col justify-center lg:ml-[27px]'>
-                        <Image src={item.icon} alt='icon' width={48} height={48} />
+                        <Image src={item.icon} alt='icon' className='w-[48px] h-[48px] ' />
                     </div>
                     <div className=' h-full flex flex-row lg:flex-col text-center justify-center lg:text-left'>
                         <div className='w-full lg:mr-4'>
