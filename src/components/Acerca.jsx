@@ -35,6 +35,9 @@ function Acerca() {
     const [ref, inView] = useInView({
       triggerOnce: true, // Cambia a true para que la animación solo se ejecute una vez
     });
+    const [ref2, inView2] = useInView({
+      triggerOnce: true, // Cambia a true para que la animación solo se ejecute una vez
+    });
 
 
     const variantsInfo = {
@@ -78,10 +81,10 @@ de trapo industrial en el mercado</motion.h2>
             flex flex-col items-center justify-center
             shadow-brand gap-3
             '
-            ref={ref}
+            ref={ref2}
             custom={index}
             initial="hidden"
-            animate={inView ? "visible" : "hidden"}
+            animate={inView2 ? "visible" : "hidden"}
             variants={variantsInfo}
             >
                 <Image src={item.icon} alt='icon' width={48} height={48} />
