@@ -13,8 +13,10 @@ function Hero() {
 
 
   const variantsH1 = isTabletOrMobile ? {
-    hidden: { opacity: 0 },
-    visible: { 
+    hidden: { opacity: 0,
+    y:0 },
+    visible: {
+      y:0, 
       opacity: 1,
       transition: { duration: 3, ease: "easeOut" }
     }

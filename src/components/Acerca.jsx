@@ -5,6 +5,8 @@ import garantizado from '../../public/images/Acerca/garantizado.svg'
 import lideres from '../../public/images/Acerca/lideres.svg'
 import { useMediaQuery } from 'react-responsive';
 import {motion} from 'framer-motion'
+import { useInView } from 'react-intersection-observer'; // Importa useInView
+
 
 
 
@@ -30,6 +32,10 @@ function Acerca() {
 
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
 
+    const [ref, inView] = useInView({
+      triggerOnce: true, // Cambia a true para que la animación solo se ejecute una vez
+    });
+
 
     const variantsInfo = {
         hidden: { opacity: 0 },
@@ -41,8 +47,9 @@ function Acerca() {
         })
       };
       const variantsH1 = isTabletOrMobile ? {
-        hidden: { opacity: 0 },
+        hidden: { opacity: 0, y:0 },
         visible: { 
+          y:0,
           opacity: 1,
           transition: { duration: 3, ease: "easeOut" }
         }
@@ -58,8 +65,9 @@ function Acerca() {
     return (
         <div className='w-full h-full flex flex-col justify-center items-center pt-[64px] lg:pt-[91px] pb-[48px] lg:pb-[75px] gap-[57px] px-4 lg:px-10 2xl:px-14'>
                 <motion.h2 className='font-header font-bold text-[32px] lg:text-[48px] leading-[38px] lg:leading-[57.6px] w-full lg:w-[856px] text-center'
+                ref={ref}
                 initial="hidden"
-                animate="visible"
+                animate={inView ? "visible" : "hidden"}
                 variants={variantsH1}
                 >Descubre la más alta calidad
 de trapo industrial en el mercado</motion.h2>
@@ -70,9 +78,10 @@ de trapo industrial en el mercado</motion.h2>
             flex flex-col items-center justify-center
             shadow-brand gap-3
             '
+            ref={ref}
             custom={index}
             initial="hidden"
-            animate="visible"
+            animate={inView ? "visible" : "hidden"}
             variants={variantsInfo}
             >
                 <Image src={item.icon} alt='icon' width={48} height={48} />

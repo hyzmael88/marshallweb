@@ -6,9 +6,10 @@ import { useMediaQuery } from 'react-responsive';
 
 function Navbar() {
 
-    const isMobile = useMediaQuery({ maxDeviceWidth: 767 });
+    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
 
-    const variantsLogo = isMobile ? {
+
+    const variantsLogo = isTabletOrMobile ? {
         hidden: { x: -100 },
         visible: { 
             x: 0,
@@ -21,7 +22,7 @@ function Navbar() {
             transition: { duration: 2, ease: "easeOut" }
         }
     };
-      const variantsMenu = isMobile ? {
+      const variantsMenu = isTabletOrMobile ? {
         hidden: { y: 100 },
         visible: { 
           y: 0,
@@ -35,6 +36,20 @@ function Navbar() {
           transition: { duration: 2, ease: "easeOut" }
         }
       }
+      const variantsButton = isTabletOrMobile ? {
+        hidden: { x: 100 },
+        visible: { 
+            x: 0,
+            transition: { duration: 2, ease: "easeOut" }
+        }
+    }
+      :{
+        hidden: { y: -20 },
+        visible: { 
+            y: 0,
+            transition: { duration: 2, ease: "easeOut" }
+        }
+    };
     
 
   return (
@@ -58,7 +73,11 @@ function Navbar() {
                 </motion.div> 
         </div>
         <div className='w-full h-full flex flex-row justify-end items-center'>
-            <button className='px-[20px] py-[8px] bg-brand-primary rounded-[10px]  text-white  hover:scale-105 uppercase animate-pulse transition-all duration-300 hover:animate-none'>cotizar</button>
+            <motion.button 
+            initial="hidden"
+            animate="visible"
+            variants={variantsButton}
+            className='px-[20px] py-[8px] bg-brand-primary rounded-[10px]  text-white  hover:scale-105 uppercase  hover:animate-none'>cotizar</motion.button>
         </div>
 
     </div>
@@ -74,7 +93,11 @@ function Navbar() {
               </motion.div>
         </div>
         <div className='w-full h-full flex flex-row justify-end items-center'>
-            <button className='px-[20px] py-[8px] bg-brand-primary rounded-[10px]  text-white uppercase'>cotizar</button>
+            <motion.button
+             initial="hidden"
+             animate="visible"
+             variants={variantsButton}
+            className='px-[20px] py-[8px] bg-brand-primary rounded-[10px]  text-white uppercase'>cotizar</motion.button>
         </div>
     
 
