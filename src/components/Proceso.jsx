@@ -3,7 +3,11 @@ import aprueba from '../../public/images/Proceso/aprueba.svg'
 import cotiza from '../../public/images/Proceso/cotiza.svg'
 import recibe from '../../public/images/Proceso/recibe.svg'
 import Image from 'next/image'
+import {motion} from 'framer-motion'
 
+
+import { useMediaQuery } from 'react-responsive';
+import { useInView } from 'react-intersection-observer'; // Importa useInView
 
 function Proceso() {
     const info = [
@@ -23,13 +27,69 @@ function Proceso() {
         description: 'Tras la entrega del producto, agradeceríamos nos dejes una reseña de tu parte.'
     }
     ]
+
+    
+  const [ref, inView] = useInView({
+    triggerOnce: true, // Cambia a true para que la animación solo se ejecute una vez
+  });
+
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
+
+  console.log(isTabletOrMobile)
+
+  const variantsH1 = isTabletOrMobile ? {
+    hidden: { opacity: 0,
+    y:0 },
+    visible: { 
+      y:0,
+      opacity: 1,
+      transition: { duration: 3, ease: "easeOut" }
+    }
+  } : {
+    hidden: { y: -100 },
+    visible: { 
+      y: 0,
+      transition: { duration: 3, ease: "easeOut" }
+    }
+  };
+
+  const variantsP = isTabletOrMobile ? {
+    hidden: { y: 100 },
+    visible: { 
+      y: 0,
+      transition: { duration: 3, ease: "easeOut" }
+    }
+  }
+  : {
+    hidden: { y: 20 },
+    visible: { 
+      y: 0,
+      transition: { duration: 3, ease: "easeOut" }
+    }
+  };
+
+  const variantsImage = isTabletOrMobile ? {
+    hidden: { scale: 0.9 },
+    visible: { 
+      scale: 1,
+      transition: { duration: 3, ease: "easeOut" }
+    }
+  }
+  : {
+    hidden: { scale: 1.1 },
+    visible: { 
+      scale: 1,
+      transition: { duration: 3, ease: "easeOut" }
+    }
+  };
+
   return (
     <div className='w-full px-4 lg:px-14 h-full lg:h-[605px] flex flex-col lg:flex-row justify-between items-center py-[60px] gap-8 '>
         <div className='w-full h-full flex flex-col items-center lg:items-start justify-center'>
-        <div className='w-full lg:w-full 2xl:w-[721px] h-[270px] lg:h-[411px] rounded-[19px] bg-[#233E9E] flex flex-col  justify-center px-8 md:gap-4 lg:gap-0'>
+        <motion.div className='w-full lg:w-full 2xl:w-[721px] h-[270px] lg:h-[411px] rounded-[19px] bg-[#233E9E] flex flex-col  justify-center px-8 md:gap-4 lg:gap-0'>
             <h4 className='font-header text-white text-[15px] lg:text-[24px] font-medium md:text-center lg:text-start'>Experimenta la diferencia</h4>
             <h3 className='w-full lg:w-[550px] font-header text-[32px] lg:text-[49px] font-bold leading-[38px] lg:leading-[59px] text-white md:text-center lg:text-start '>Cotiza, paga y recibe tu producto con facilidad. ¡Así de simple!</h3>
-        </div>
+        </motion.div>
         </div>
         
             <div className='w-full h-full flex flex-col justify-center items-center   '>
