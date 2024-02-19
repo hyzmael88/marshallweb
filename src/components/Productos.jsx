@@ -96,7 +96,7 @@ function Productos() {
     visible: (index) => ({
       opacity: 1,
       transition: {
-        delay: index * 0.1 // Cada elemento se animará con un retraso de 0.3s
+        delay: index * 0.3 // Cada elemento se animará con un retraso de 0.3s
       }
     }),
     exit: (index) => ({ opacity: 0,
@@ -124,16 +124,19 @@ function Productos() {
        variants={variantsH1}
       >
         <h3 className="font-header font-bold text-[48px]">Productos</h3>
-        <h4 className="font-header font-bold text-[16px] lg:text-[24px] text-center lg:text-start">
+        <h4 
+          ref={ref2}
+        className="font-header font-bold text-[16px] lg:text-[24px] text-center lg:text-start">
           Conoce los tipos de trapo que manejamos y ¡cotiza hoy mismo!
         </h4>
       </motion.div>
-      <div  id="slider" className="w-full  flex flex-row items-center gap-[24px]  lg:gap-[48px] xl:gap- overflow-x-scroll no-scrollbar lg:hidden  ">
+      <div
+      id="slider" className="w-full  flex flex-row items-center gap-[24px]  lg:gap-[48px] xl:gap- overflow-x-scroll no-scrollbar lg:hidden  ">
         {
         productos.map((producto, index) => (
           <motion.div
+       
             key={index}
-            ref={ref2}
             custom={index}
             initial="hidden"
             animate={inView2 ? "visible" : "hidden"}
@@ -141,6 +144,7 @@ function Productos() {
             variants={variantsInfo}
             className="w-full h-full flex flex-col gap-[16px]  justify-center"
           >
+            
             <div className="w-[300px] lg:w-[320px] xl:w-[355px] 2xl:w-[400px] h-[360px] 2xl:h-[486px] rounded-[20px] lg:rounded-[40px] bg-gray-400" />
             <div className=" flex flex-col gap-[8px] ">
               <h5 className="font-header font-semibold text-[18px]">
@@ -193,7 +197,6 @@ function Productos() {
   [0, 1].map((index) => (
     <motion.div
     key={index}
-    ref={ref2}
     custom={index}
     initial="hidden"
     animate={inView2 ? "visible" : "hidden"}
@@ -223,7 +226,6 @@ function Productos() {
             </svg>
           </div>
           <motion.div
-          ref={ref2}
           initial="hidden"
           animate={inView2 ? "visible" : "hidden"}
           variants={variantsPlus}

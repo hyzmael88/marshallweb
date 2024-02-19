@@ -80,19 +80,17 @@ function Proceso() {
     <div className='w-full px-4 lg:px-14 h-full lg:h-[605px] flex flex-col lg:flex-row justify-between items-center py-[60px] gap-8 '>
         <div className='w-full h-full flex flex-col items-center lg:items-start justify-center'>
         <motion.div 
-         ref={ref}
+        ref={ref}
          initial="hidden"
          animate={inView ? "visible" : "hidden"}
          variants={variantsBackground}
         className='w-full lg:w-full 2xl:w-[721px] h-[270px] lg:h-[411px] rounded-[19px] bg-[#233E9E] flex flex-col  justify-center px-8 md:gap-4 lg:gap-0'>
             <motion.h4 
-             ref={ref}
              initial="hidden"
              animate={inView ? "visible" : "hidden"}
              variants={variantsH1}
             className='font-header text-white text-[15px] lg:text-[24px] font-medium md:text-center lg:text-start'>Experimenta la diferencia</motion.h4>
             <motion.h3 
-            ref={ref}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
             variants={variantsH1}
@@ -100,14 +98,16 @@ function Proceso() {
         </motion.div>
         </div>
         
-            <div className='w-full h-full flex flex-col justify-center items-center   '>
+            <div 
+            
+            className='w-full h-full flex flex-col justify-center items-center   '>
                 {
                     info.map((item, index) => (
                         <motion.div
-                        ref={ref}
+                        ref={ref2}
                         custom={index}
                         initial="hidden"
-                        animate={inView ? "visible" : "hidden"}
+                        animate={inView2 ? "visible" : "hidden"}
                         variants={variantsInfo}
                         key={index} className='w-full'>
                         <div  className='w-full lg:w-full h-[200px] lg:h-[91px] flex flex-col lg:flex-row items-center bg-brand-tertiary/30 rounded-[19px] lg:gap-8 py-4 lg:py-0'>

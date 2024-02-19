@@ -2,10 +2,15 @@ import React from "react";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import {motion} from 'framer-motion'
 import { useMediaQuery } from 'react-responsive';
+import { useInView } from 'react-intersection-observer'; // Importa useInView
 
 
 
 function Hero() {
+
+  const [ref, inView] = useInView({
+    triggerOnce: true, // Cambia a true para que la animación solo se ejecute una vez
+  });
 
   const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
 
@@ -42,6 +47,29 @@ function Hero() {
       transition: { duration: 3, ease: "easeOut" }
     }
   }
+
+  const variantsCol1 = isTabletOrMobile ? {
+    hidden: { y: 0 },
+    visible: { y: -130, 
+      transition: { duration: 3, ease: "easeOut" } }
+  }
+  :{
+    hidden: { y: 100 },
+    visible: { y: -130, 
+      transition: { duration: 3, ease: "easeOut" } }
+  }
+  const variantsCol2 = isTabletOrMobile ? {
+    hidden: { y: -130 },
+    visible: { y: 0, 
+      transition: { duration: 3, ease: "easeOut" }
+    }
+  }:{
+    hidden: { y: -130 },
+    visible: { y: 0, 
+      transition: { duration: 3, ease: "easeOut" }
+    }
+  }
+  
 
   return (
     <div className="w-full px-4 lg:px-0 2xl:px-14 h-screen  xl:h-[900px] flex flex-col gap-[64px] lg:gap-[0px] lg:flex-row lg:pl-8">
@@ -89,9 +117,10 @@ function Hero() {
         <motion.div
          className="w-full h-full  flex flex-col gap-2 transform -translate-y-[77px] lg:-translate-y-[130px]"
  
-  initial={{ y: 100 }}
-  animate={{ y: -130 }}
-  transition={{ duration: 2, ease: "easeOut" }}
+ initial="hidden"
+ animate={inView ? "visible" : "hidden"}
+ variants={variantsCol1}
+
          
          >
 
@@ -99,7 +128,9 @@ function Hero() {
             <div className="w-[160px] md:h-[340px] md:w-[150px] lg:w-[320px] h-[170px] lg:h-[340px]"/>
             </div>
             <div className="w-full h-full bg-gray-600 rounded-[20px] lg:rounded-[40px]">
-              <div className="w-[160px] md:h-[340px] md:w-[150px] lg:w-[320px] h-[170px] lg:h-[340px]"/>
+              <div
+              ref={ref}
+              className="w-[160px] md:h-[340px] md:w-[150px] lg:w-[320px] h-[170px] lg:h-[340px]"/>
             </div>
             <div className="w-full h-full bg-gray-600 rounded-[20px] lg:rounded-[40px]">
               <div
@@ -110,9 +141,9 @@ function Hero() {
           
         </motion.div>
         <motion.div className="h-full w-full flex flex-col  gap-2 "
-        initial={{ y: -130 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 2, ease: "easeOut" }}
+         initial="hidden"
+         animate={inView ? "visible" : "hidden"}
+         variants={variantsCol2}
         >
           <div className="w-full h-full bg-gray-600 rounded-[20px] lg:rounded-[40px]">
             <div className="w-[160px] md:h-[340px] md:w-[150px] lg:w-[320px] h-[170px] lg:h-[340px]"></div>
