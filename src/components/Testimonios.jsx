@@ -80,7 +80,10 @@ function Testimonios() {
       variants={variantsH1}
       className="flex flex-col items-center">
         <h3 className="font-header font-bold text-[36px] lg:text-[48px]  text-center lg:text-start">Clientes satisfechos</h3>
-        <h4 className="font-header lg:font-bold text-[16px] lg:text-[24px] text-center lg:text-start">
+        <h4 
+        
+        ref={ref2}
+        className="font-header lg:font-bold text-[16px] lg:text-[24px] text-center lg:text-start">
         ¡Descubre por qué somos la elección preferida de nuestros clientes!
         </h4>
       </motion.div>
@@ -88,7 +91,6 @@ function Testimonios() {
         {
             testimonios.slice(0,3).map((testimonio, index) => (
                 <motion.div
-                ref={ref2}
                 custom={index}
                 initial="hidden"
                 animate={inView2 ? "visible" : "hidden"}
