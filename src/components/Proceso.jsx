@@ -28,16 +28,18 @@ function Proceso() {
     }
     ]
 
-    
-  const [ref, inView] = useInView({
-    triggerOnce: true, // Cambia a true para que la animación solo se ejecute una vez
-  });
+    const [ref, inView] = useInView({
+      triggerOnce: true, // Cambia a true para que la animación solo se ejecute una vez
+    });
+    const [ref2, inView2] = useInView({
+      triggerOnce: true, // Cambia a true para que la animación solo se ejecute una vez
+    });
 
   const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
 
   console.log(isTabletOrMobile)
 
-  const variantsH1 = isTabletOrMobile ? {
+  const variantsH1 = {
     hidden: { opacity: 0,
     y:0 },
     visible: { 
@@ -45,57 +47,69 @@ function Proceso() {
       opacity: 1,
       transition: { duration: 3, ease: "easeOut" }
     }
-  } : {
-    hidden: { y: -100 },
-    visible: { 
-      y: 0,
-      transition: { duration: 3, ease: "easeOut" }
-    }
-  };
+  } 
 
-  const variantsP = isTabletOrMobile ? {
-    hidden: { y: 100 },
+  const variantsBackground = isTabletOrMobile ? {
+    hidden: { y: -20 },
     visible: { 
       y: 0,
       transition: { duration: 3, ease: "easeOut" }
     }
   }
   : {
-    hidden: { y: 20 },
+    hidden: { x:-100 },
     visible: { 
-      y: 0,
+      x: 0,
       transition: { duration: 3, ease: "easeOut" }
     }
   };
 
-  const variantsImage = isTabletOrMobile ? {
-    hidden: { scale: 0.9 },
-    visible: { 
-      scale: 1,
-      transition: { duration: 3, ease: "easeOut" }
-    }
-  }
-  : {
-    hidden: { scale: 1.1 },
-    visible: { 
-      scale: 1,
-      transition: { duration: 3, ease: "easeOut" }
-    }
+  const variantsInfo = {
+    hidden: { opacity: 0 },
+    visible: (index) => ({
+      opacity: 1,
+      transition: {
+        delay: index * 0.3 // Cada elemento se animará con un retraso de 0.2s
+      }
+    })
   };
+
+  
 
   return (
     <div className='w-full px-4 lg:px-14 h-full lg:h-[605px] flex flex-col lg:flex-row justify-between items-center py-[60px] gap-8 '>
         <div className='w-full h-full flex flex-col items-center lg:items-start justify-center'>
-        <motion.div className='w-full lg:w-full 2xl:w-[721px] h-[270px] lg:h-[411px] rounded-[19px] bg-[#233E9E] flex flex-col  justify-center px-8 md:gap-4 lg:gap-0'>
-            <h4 className='font-header text-white text-[15px] lg:text-[24px] font-medium md:text-center lg:text-start'>Experimenta la diferencia</h4>
-            <h3 className='w-full lg:w-[550px] font-header text-[32px] lg:text-[49px] font-bold leading-[38px] lg:leading-[59px] text-white md:text-center lg:text-start '>Cotiza, paga y recibe tu producto con facilidad. ¡Así de simple!</h3>
+        <motion.div 
+         ref={ref}
+         initial="hidden"
+         animate={inView ? "visible" : "hidden"}
+         variants={variantsBackground}
+        className='w-full lg:w-full 2xl:w-[721px] h-[270px] lg:h-[411px] rounded-[19px] bg-[#233E9E] flex flex-col  justify-center px-8 md:gap-4 lg:gap-0'>
+            <motion.h4 
+             ref={ref}
+             initial="hidden"
+             animate={inView ? "visible" : "hidden"}
+             variants={variantsH1}
+            className='font-header text-white text-[15px] lg:text-[24px] font-medium md:text-center lg:text-start'>Experimenta la diferencia</motion.h4>
+            <motion.h3 
+            ref={ref}
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+            variants={variantsH1}
+            className='w-full lg:w-[550px] font-header text-[32px] lg:text-[49px] font-bold leading-[38px] lg:leading-[59px] text-white md:text-center lg:text-start '>Cotiza, paga y recibe tu producto con facilidad. ¡Así de simple!</motion.h3>
         </motion.div>
         </div>
         
             <div className='w-full h-full flex flex-col justify-center items-center   '>
                 {
                     info.map((item, index) => (
-                        <div key={index} className='w-full'>
+                        <motion.div
+                        ref={ref}
+                        custom={index}
+                        initial="hidden"
+                        animate={inView ? "visible" : "hidden"}
+                        variants={variantsInfo}
+                        key={index} className='w-full'>
                         <div  className='w-full lg:w-full h-[200px] lg:h-[91px] flex flex-col lg:flex-row items-center bg-brand-tertiary/30 rounded-[19px] lg:gap-8 py-4 lg:py-0'>
                     <div className='h-full flex flex-col justify-center lg:ml-[27px]'>
                         <Image src={item.icon} alt='icon' className='w-[48px] h-[48px] ' />
@@ -110,7 +124,7 @@ function Proceso() {
                 <div className='w-full flex flex-row justify-center'>
                 <div className={`${index < info.length-1 ? 'w-[3px] h-[48px] bg-brand-tertiary my-3 lg:ml-[40px]' : 'hidden'}`}></div>
                     </div>
-                </div>
+                </motion.div>
                 
                     ))
                 }

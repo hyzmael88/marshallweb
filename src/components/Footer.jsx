@@ -1,6 +1,10 @@
 import React from 'react'
 import logoFooter from '../../public/images/logoFooter.png'
 import Image from 'next/image'
+import {motion} from 'framer-motion'
+import { useMediaQuery } from 'react-responsive';
+import { useInView } from 'react-intersection-observer'; // Importa useInView
+
 
 function Footer() {
 

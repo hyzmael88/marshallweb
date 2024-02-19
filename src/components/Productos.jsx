@@ -1,6 +1,38 @@
 import React, { useEffect, useState } from "react";
+import {motion} from 'framer-motion'
+import { useMediaQuery } from 'react-responsive';
+import { useInView } from 'react-intersection-observer'; // Importa useInView
+
 
 function Productos() {
+
+  const [ref, inView] = useInView({
+    triggerOnce: true, // Cambia a true para que la animación solo se ejecute una vez
+  });
+  
+  const [ref2, inView2] = useInView({
+    triggerOnce: true, // Cambia a true para que la animación solo se ejecute una vez
+  });
+
+
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
+
+  const variantsH1 = isTabletOrMobile ? {
+    hidden: { opacity: 0,
+    y:0 },
+    visible: { 
+      y:0,
+      opacity: 1,
+      transition: { duration: 3, ease: "easeOut" }
+    }
+  } : {
+    hidden: { y: -100 },
+    visible: { 
+      y: 0,
+      transition: { duration: 3, ease: "easeOut" }
+    }
+  };
+
   const productos = [
     {
       id: 1,
@@ -54,21 +86,40 @@ function Productos() {
 
   const [position, setPosition] = useState(0)
 
-  
+  const variantsInfo = {
+    hidden: { opacity: 0 },
+    visible: (index) => ({
+      opacity: 1,
+      transition: {
+        delay: index * 0.3 // Cada elemento se animará con un retraso de 0.2s
+      }
+    })
+  };
+
 
   return (
     <div className="w-full h-full 2xl:h-[916px] flex flex-col  items-center gap-[40px] px-4 lg:px-14  ">
-      <div className="flex flex-col items-center">
+      <motion.div className="flex flex-col items-center"
+       ref={ref}
+       initial="hidden"
+       animate={inView ? "visible" : "hidden"}
+       variants={variantsH1}
+      >
         <h3 className="font-header font-bold text-[48px]">Productos</h3>
         <h4 className="font-header font-bold text-[16px] lg:text-[24px] text-center lg:text-start">
           Conoce los tipos de trapo que manejamos y ¡cotiza hoy mismo!
         </h4>
-      </div>
+      </motion.div>
       <div  id="slider" className="w-full  flex flex-row items-center gap-[24px]  lg:gap-[48px] xl:gap- overflow-x-scroll no-scrollbar lg:hidden  ">
         {
         productos.map((producto, index) => (
-          <div
+          <motion.div
             key={index}
+            ref={ref2}
+            custom={index}
+            initial="hidden"
+            animate={inView2 ? "visible" : "hidden"}
+            variants={variantsInfo}
             className="w-full h-full flex flex-col gap-[16px]  justify-center"
           >
             <div className="w-[300px] lg:w-[320px] xl:w-[355px] 2xl:w-[400px] h-[360px] 2xl:h-[486px] rounded-[20px] lg:rounded-[40px] bg-gray-400" />
@@ -81,7 +132,7 @@ function Productos() {
                 {producto.descripcion}
               </p>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
       <div  id="slider" className="hidden w-full  lg:flex flex-row items-center gap-[24px]  lg:gap-[48px] xl:gap- overflow-x-scroll no-scrollbar  ">

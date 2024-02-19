@@ -1,6 +1,45 @@
 import React from 'react'
+import {motion} from 'framer-motion'
+import { useMediaQuery } from 'react-responsive';
+import { useInView } from 'react-intersection-observer'; // Importa useInView
+
 
 function Testimonios() {
+
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
+
+  const [ref, inView] = useInView({
+    triggerOnce: true, // Cambia a true para que la animación solo se ejecute una vez
+  });
+  const [ref2, inView2] = useInView({
+    triggerOnce: true, // Cambia a true para que la animación solo se ejecute una vez
+  });
+
+  const variantsInfo = {
+    hidden: { opacity: 0 },
+    visible: (index) => ({
+      opacity: 1,
+      transition: {
+        delay: index * 0.3 // Cada elemento se animará con un retraso de 0.2s
+      }
+    })
+  };
+
+  const variantsH1 = isTabletOrMobile ? {
+    hidden: { opacity: 0, y:0 },
+    visible: { 
+      y:0,
+      opacity: 1,
+      transition: { duration: 3, ease: "easeOut" }
+    }
+  } : {
+    hidden: { y: -100 },
+    visible: { 
+      y: 0,
+      transition: { duration: 3, ease: "easeOut" }
+    }
+  } 
+ ;
 
     const estrella =
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
@@ -34,18 +73,27 @@ function Testimonios() {
   return (
     <div className='w-full h-full lg:h-[658px] flex flex-col items-center gap-[40px] px-4 lg:px-10 2xl:px-14 py-[64px] overflow-hidden'>
        
-      <div className="flex flex-col items-center">
+      <motion.div 
+      ref={ref}
+      initial="hidden"
+      animate={inView ? "visible" : "hidden"}
+      variants={variantsH1}
+      className="flex flex-col items-center">
         <h3 className="font-header font-bold text-[36px] lg:text-[48px]  text-center lg:text-start">Clientes satisfechos</h3>
         <h4 className="font-header lg:font-bold text-[16px] lg:text-[24px] text-center lg:text-start">
         ¡Descubre por qué somos la elección preferida de nuestros clientes!
         </h4>
-      </div>
+      </motion.div>
       <div className='w-full h-full flex flex-row gap-[20px] lg:gap-[32px] justify-between overflow-x-scroll no-scrollbar'>
         {
             testimonios.slice(0,3).map((testimonio, index) => (
-
-                
-                <div key={index} className='h-[350px] lg:h-[350px] 2xl:h-[330px] w-[90%] lg:w-[340px] xl:w-[380px] 2xl:w-[416px] flex flex-col justify-center
+                <motion.div
+                ref={ref2}
+                custom={index}
+                initial="hidden"
+                animate={inView2 ? "visible" : "hidden"}
+                variants={variantsInfo}
+                key={index} className='h-[350px] lg:h-[350px] 2xl:h-[330px] w-[90%] lg:w-[340px] xl:w-[380px] 2xl:w-[416px] flex flex-col justify-center
                 bg-[#3d64f33a] rounded-[25px] p-[24px] lg:p-[32px] gap-[32px]
                 '>
             <div className='flex flex-row items-center gap-[4px]'>
@@ -60,7 +108,7 @@ function Testimonios() {
                     <h5 className='font-header text-[16px] font-semibold'>{testimonio.nombre}</h5>
                     <p>{testimonio.cargo},{testimonio.empresa}</p>
                     </div>
-        </div>
+        </motion.div>
                 ))
             }
       </div>

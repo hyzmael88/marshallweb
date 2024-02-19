@@ -1,18 +1,74 @@
 import React from 'react'
+import {motion} from 'framer-motion'
+import { useMediaQuery } from 'react-responsive';
+import { useInView } from 'react-intersection-observer'; // Importa useInView
+
 
 function Contacto() {
+
+    
+    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
+
+    const [ref, inView] = useInView({
+      triggerOnce: true, // Cambia a true para que la animación solo se ejecute una vez
+    });
+    const [ref2, inView2] = useInView({
+      triggerOnce: true, // Cambia a true para que la animación solo se ejecute una vez
+    });
+
+    const variantsImage = isTabletOrMobile ? {
+        hidden: { scale: 0.9 },
+        visible: { 
+          scale: 1,
+          transition: { duration: 3, ease: "easeOut" }
+        }
+      }
+      : {
+        hidden: { scale: 1.1 },
+        visible: { 
+          scale: 1,
+          transition: { duration: 3, ease: "easeOut" }
+        }
+      };
+    
+
+
+    const variantsH1 = isTabletOrMobile ? {
+        hidden: { opacity: 0, y:0 },
+        visible: { 
+          y:0,
+          opacity: 1,
+          transition: { duration: 3, ease: "easeOut" }
+        }
+      } : {
+        hidden: { y: -100 },
+        visible: { 
+          y: 0,
+          transition: { duration: 3, ease: "easeOut" }
+        }
+      } 
+     ;
+
     return (
         <div className='w-full h-full lg:h-[968px] bg-brand-secondary flex flex-col-reverse lg:flex-row px-4 lg:px-10 2xl:px-14 gap-[48px] lg:gap-[0px] py-[64px] lg:py-[0px]'>
                 <div className='w-full h-full flex flex-col justify-center items-center'>
 
-                <div className='h-[335px] lg:h-[734px] w-full 2xl:w-[616px] bg-gray-400 rounded-[20px] lg:rounded-[69px]'></div>
+                <motion.div 
+                 initial="hidden"
+             animate={inView ? "visible" : "hidden"}
+             variants={variantsImage} className='h-[335px] lg:h-[734px] w-full 2xl:w-[616px] bg-gray-400 rounded-[20px] lg:rounded-[69px]'></motion.div>
                 </div>
                 <div className='w-full h-full flex flex-col justify-center lg:items-center xl:items-end 2xl:items-start  text-white gap-[32px]'>
-                        <div className='flex flex-col gap-[20px] text-center lg:text-start  '>
+                        <motion.div 
+                        ref={ref}
+                        initial="hidden"
+                        animate={inView ? "visible" : "hidden"}
+                        variants={variantsH1}
+                        className='flex flex-col gap-[20px] text-center lg:text-start  '>
                         <h5 className='text-[18px] font-header'>Cotiza nuestro producto o mándanos tus dudas.</h5>
                         <h3 className='text-[48px] font-header font-bold'>Contáctanos</h3>
                         <h5 className='text-[18px] font-header'>Experimenta la calidad de nuestras soluciones de limpieza.</h5>
-                        </div>
+                        </motion.div>
         <div id='form' className='w-full flex flex-col items-center xl:items-end 2xl:items-start gap-[24px]'>
                 <div className=' flex flex-col  gap-[8px]' >
                 <label>Nombre</label>
