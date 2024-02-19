@@ -45,7 +45,7 @@ function Hero() {
 
   return (
     <div className="w-full px-4 lg:px-0 2xl:px-14 h-screen  xl:h-[900px] flex flex-col gap-[64px] lg:gap-[0px] lg:flex-row lg:pl-8">
-      <div className="w-full h-full flex flex-col justify-center items-center">
+      <div className="w-full h-full flex flex-col justify-center items-center mt-10 lg:mt-0">
         <div className="w-full flex flex-col gap-[24px]">
           <motion.h1
            initial="hidden"
