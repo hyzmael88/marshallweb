@@ -129,7 +129,7 @@ function Hero() {
             </div>
             <div className="w-full h-full bg-gray-600 rounded-[20px] lg:rounded-[40px]">
               <div
-              ref={ref}
+             
               className="w-[160px] md:h-[340px] md:w-[150px] lg:w-[320px] h-[170px] lg:h-[340px]"/>
             </div>
             <div className="w-full h-full bg-gray-600 rounded-[20px] lg:rounded-[40px]">
@@ -156,6 +156,9 @@ function Hero() {
           </div>
         </motion.div>
       </div>
+      <span
+       ref={ref}
+      />
     </div>
   );
 }
