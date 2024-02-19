@@ -72,8 +72,11 @@ function Acerca() {
                 initial="hidden"
                 animate={inView ? "visible" : "hidden"}
                 variants={variantsH1}
-                >Descubre la más alta calidad
+                >Descubre la más alta calidad  
 de trapo industrial en el mercado</motion.h2>
+<span ref={ref2}>
+
+</span>
 <div className='w-full h-full flex flex-col lg:flex-row justify-between items-center gap-[48px] lg:gap-[0px] '>
     {
         info.map((item, index) => (
@@ -81,7 +84,7 @@ de trapo industrial en el mercado</motion.h2>
             flex flex-col items-center justify-center
             shadow-brand gap-3
             '
-            ref={ref2}
+            
             custom={index}
             initial="hidden"
             animate={inView2 ? "visible" : "hidden"}
