@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {motion} from 'framer-motion'
+import {AnimatePresence, motion} from 'framer-motion'
 import { useMediaQuery } from 'react-responsive';
 import { useInView } from 'react-intersection-observer'; // Importa useInView
 
@@ -96,10 +96,16 @@ function Productos() {
     visible: (index) => ({
       opacity: 1,
       transition: {
-        delay: index * 0.3 // Cada elemento se animará con un retraso de 0.2s
+        delay: index * 0.1 // Cada elemento se animará con un retraso de 0.3s
       }
+    }),
+    exit: (index) => ({ opacity: 0,
+      transition: {
+        delay: index * 0.1, ease: "easeOut"
+       }
     })
-  };
+}
+
   const variantsPlus  ={
     hidden: { x: 100 },
     visible: { 
@@ -131,6 +137,7 @@ function Productos() {
             custom={index}
             initial="hidden"
             animate={inView2 ? "visible" : "hidden"}
+            exit="exit"
             variants={variantsInfo}
             className="w-full h-full flex flex-col gap-[16px]  justify-center"
           >
@@ -148,29 +155,37 @@ function Productos() {
         ))}
       </div>
       <div  id="slider" className="hidden w-full  lg:flex flex-row items-center gap-[24px]  lg:gap-[48px] xl:gap- overflow-x-scroll no-scrollbar  ">
-        {
-        productos.slice(0+position,3+position).map((producto, index) => (
-          <motion.div
-            key={index}
-            ref={ref3}
-            custom={index}
-            initial="hidden"
-            animate={inView3 ? "visible" : "hidden"}
-            variants={variantsInfo}
-            className="w-full h-full flex flex-col gap-[16px]  justify-center"
-          >
-            <div className="w-[300px] lg:w-[320px] xl:w-[355px] 2xl:w-[400px] h-[360px] 2xl:h-[486px] rounded-[20px] lg:rounded-[40px] bg-gray-400" />
-            <div className=" flex flex-col gap-[8px] ">
-              <h5 className="font-header font-semibold text-[18px] h-[30px]">
-                {producto.nombre}
-              </h5>
-              <div className="h-[14px]"></div>
-              <p className="font-paragraph text-[14px] leading-[21px]">
-                {producto.descripcion}
-              </p>
-            </div>
-          </motion.div>
-        ))}
+      {
+  productos.slice(0+position,3+position).map((producto) => (
+    <AnimatePresence key={producto.id} mode="wait"> {/* Usa producto.id en lugar de index */}
+
+    <motion.div
+       key={producto.id}
+       ref={ref3}
+       custom={producto.id} // Pasa el index como custom prop
+       initial="hidden"
+       animate={inView3 ? "visible" : "hidden"}
+       exit="exit"
+       variants={variantsInfo}
+      
+      
+      className="w-full h-full flex flex-col gap-[16px]  justify-center"
+      >
+      <div className="w-[300px] lg:w-[320px] xl:w-[355px] 2xl:w-[400px] h-[360px] 2xl:h-[486px] rounded-[20px] lg:rounded-[40px] bg-gray-400" />
+      <div className=" flex flex-col gap-[8px] ">
+        <h5 className="font-header font-semibold text-[18px] h-[30px]">
+          {producto.nombre}
+        </h5>
+        <div className="h-[14px]"></div>
+        <p className="font-paragraph text-[14px] leading-[21px]">
+          {producto.descripcion}
+        </p>
+      </div>
+    </motion.div>
+    
+    </AnimatePresence>
+  ))
+}
       </div>
       <div className="w-full hidden lg:flex flex-row justify-between ">
         <div  className="flex flex-row gap-[8px] items-center">
