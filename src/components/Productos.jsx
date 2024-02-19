@@ -13,6 +13,9 @@ function Productos() {
   const [ref2, inView2] = useInView({
     triggerOnce: true, // Cambia a true para que la animación solo se ejecute una vez
   });
+  const [ref3, inView3] = useInView({
+    triggerOnce: true, // Cambia a true para que la animación solo se ejecute una vez
+  });
 
 
   const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
@@ -138,8 +141,13 @@ function Productos() {
       <div  id="slider" className="hidden w-full  lg:flex flex-row items-center gap-[24px]  lg:gap-[48px] xl:gap- overflow-x-scroll no-scrollbar  ">
         {
         productos.slice(0+position,3+position).map((producto, index) => (
-          <div
+          <motion.div
             key={index}
+            ref={ref3}
+            custom={index}
+            initial="hidden"
+            animate={inView3 ? "visible" : "hidden"}
+            variants={variantsInfo}
             className="w-full h-full flex flex-col gap-[16px]  justify-center"
           >
             <div className="w-[300px] lg:w-[320px] xl:w-[355px] 2xl:w-[400px] h-[360px] 2xl:h-[486px] rounded-[20px] lg:rounded-[40px] bg-gray-400" />
@@ -152,7 +160,7 @@ function Productos() {
                 {producto.descripcion}
               </p>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
       <div className="w-full hidden lg:flex flex-row justify-between ">

@@ -15,6 +15,9 @@ function Contacto() {
     const [ref2, inView2] = useInView({
       triggerOnce: true, // Cambia a true para que la animación solo se ejecute una vez
     });
+    const [ref3, inView3] = useInView({
+      triggerOnce: true, // Cambia a true para que la animación solo se ejecute una vez
+    });
 
     const variantsImage = isTabletOrMobile ? {
         hidden: { scale: 0.9 },
@@ -30,6 +33,24 @@ function Contacto() {
           transition: { duration: 3, ease: "easeOut" }
         }
       };
+
+      const variantsInputs = isTabletOrMobile ? {
+        hidden: { scale: 0.9 },
+        visible: { 
+          scale: 1,
+          transition: { duration: 3, ease: "easeOut" }
+        }
+      }
+      : {
+        hidden: { scale: 0.9 },
+        visible: { 
+          scale: 1,
+          transition: { duration: 3, ease: "easeOut" }
+        }
+      };
+
+      
+    
     
 
 
@@ -69,7 +90,12 @@ function Contacto() {
                         <h3 className='text-[48px] font-header font-bold'>Contáctanos</h3>
                         <h5 className='text-[18px] font-header'>Experimenta la calidad de nuestras soluciones de limpieza.</h5>
                         </motion.div>
-        <div id='form' className='w-full flex flex-col items-center xl:items-end 2xl:items-start gap-[24px]'>
+        <motion.div
+           ref={ref2}
+           initial="hidden"
+           animate={inView2 ? "visible" : "hidden"}
+           variants={variantsInputs}
+        id='form' className='w-full flex flex-col items-center xl:items-end 2xl:items-start gap-[24px]'>
                 <div className=' flex flex-col  gap-[8px]' >
                 <label>Nombre</label>
             <input className=' w-[350px] lg:w-[480px] 2xl:w-[616px] h-[48px] rounded-[4px] xl:rounded-[14px] text-black font-paragraph px-4 '
@@ -88,10 +114,11 @@ function Contacto() {
                 <label htmlFor='terms'>Acepto los términos y condiciones</label>
             </div>
             <div className='w-full flex flex-row justify-center'>
-            <button className='w-[99px] h-[48px] bg-brand-primary rounded-[8px] lg:rounded-[14px] uppercase hover:scale-110 transition-all duration-300 '>Enviar</button>
+            <button 
+            className='w-[99px] h-[48px] bg-brand-primary rounded-[8px] lg:rounded-[14px] uppercase hover:scale-110 transition-all duration-300 '>Enviar</button>
             </div>
      
-    </div>
+    </motion.div>
     </div>
        
         </div>
