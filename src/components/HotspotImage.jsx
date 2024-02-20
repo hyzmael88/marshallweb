@@ -20,13 +20,13 @@ function HotspotImage() {
     visible: { 
       y:0,
       opacity: 1,
-      transition: { duration: 3, ease: "easeOut" }
+      transition: { duration: 2, ease: "easeOut" }
     }
   } : {
     hidden: { y: -100 },
     visible: { 
       y: 0,
-      transition: { duration: 3, ease: "easeOut" }
+      transition: { duration: 2, ease: "easeOut" }
     }
   };
 
@@ -34,14 +34,14 @@ function HotspotImage() {
     hidden: { y: 100 },
     visible: { 
       y: 0,
-      transition: { duration: 3, ease: "easeOut" }
+      transition: { duration: 2, ease: "easeOut" }
     }
   }
   : {
     hidden: { y: 20 },
     visible: { 
       y: 0,
-      transition: { duration: 3, ease: "easeOut" }
+      transition: { duration: 2, ease: "easeOut" }
     }
   };
 
@@ -49,20 +49,20 @@ function HotspotImage() {
     hidden: { scale: 0.9 },
     visible: { 
       scale: 1,
-      transition: { duration: 3, ease: "easeOut" }
+      transition: { duration: 2, ease: "easeOut" }
     }
   }
   : {
     hidden: { scale: 1.1 },
     visible: { 
       scale: 1,
-      transition: { duration: 3, ease: "easeOut" }
+      transition: { duration: 2, ease: "easeOut" }
     }
   };
 
   return (
     <div className='w-full  h-[863px] flex flex-col lg:flex-row justify-between items-center  px-4 lg:px-10 2xl:px-14 bg-brand-primary'>
-        <div className='w-full h-full md:h-[80%] flex flex-col items-center justify-center md:text-white gap-[29px]'>
+        <div className='w-full h-full md:h-[80%] flex flex-col items-center justify-center text-white gap-[29px]'>
             <motion.h2 className='w-full 2xl:w-[721px] font-header text-[32px] lg:text-[49px] font-bold leading-[38px] lg:leading-[59px] '
             ref={ref}
               initial="hidden"
