@@ -14,12 +14,24 @@ function Contacto() {
   const sendEmail = (e) => {
       e.preventDefault();
 
-      emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', { name, email, message }, 'YOUR_USER_ID')
-      .then((response) => {
-         console.log('SUCCESS!', response.status, response.text);
-      }, (err) => {
-         console.log('FAILED...', err);
-      });
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY; 
+      console.log(publicKey)
+
+      try {
+        emailjs.send('service_elxnwr3', 'template_ih6zja7', { name, email, message }, publicKey)
+        .then((response) => {
+           console.log('SUCCESS!', response.status, response.text);
+           setName("")
+           setEmail("")
+           setMessage("")
+        }, (err) => {
+           console.log('FAILED...', err);
+        });
+     
+      } catch (error) {
+        console.log(error)
+      }
+     
   }
 
     
@@ -140,6 +152,7 @@ function Contacto() {
             </div>
             <div className='w-full flex flex-row justify-center'>
             <button 
+            onClick={sendEmail}
             className='w-[99px] h-[48px] bg-brand-primary rounded-[8px] lg:rounded-[14px] uppercase hover:scale-110 transition-all duration-300 '>Enviar</button>
             </div>
      
