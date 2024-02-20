@@ -1,10 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {motion} from 'framer-motion'
 import { useMediaQuery } from 'react-responsive';
 import { useInView } from 'react-intersection-observer'; // Importa useInView
+import emailjs from '@emailjs/browser';
 
 
 function Contacto() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
+
+  const sendEmail = (e) => {
+      e.preventDefault();
+
+      emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', { name, email, message }, 'YOUR_USER_ID')
+      .then((response) => {
+         console.log('SUCCESS!', response.status, response.text);
+      }, (err) => {
+         console.log('FAILED...', err);
+      });
+  }
 
     
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
@@ -49,11 +65,6 @@ function Contacto() {
         }
       };
 
-      
-    
-    
-
-
     const variantsH1 = isTabletOrMobile ? {
         hidden: { opacity: 0, y:0 },
         visible: { 
@@ -90,25 +101,39 @@ function Contacto() {
                         <h3 className='text-[48px] font-header font-bold'>Contáctanos</h3>
                         <h5 className='text-[18px] font-header'>Experimenta la calidad de nuestras soluciones de limpieza.</h5>
                         </motion.div>
-        <motion.div
-           ref={ref2}
-           initial="hidden"
-           animate={inView2 ? "visible" : "hidden"}
-           variants={variantsInputs}
-        id='form' className='w-full flex flex-col items-center xl:items-end 2xl:items-start gap-[24px]'>
+                        <motion.div
+                ref={ref2}
+                initial="hidden"
+                animate={inView2 ? "visible" : "hidden"}
+                variants={variantsInputs}
+                id='form' 
+                className='w-full flex flex-col items-center xl:items-end 2xl:items-start gap-[24px]'
+                onSubmit={sendEmail}
+            >
                 <div className=' flex flex-col  gap-[8px]' >
-                <label>Nombre</label>
-            <input className=' w-[350px] lg:w-[480px] 2xl:w-[616px] h-[48px] rounded-[4px] xl:rounded-[14px] text-black font-paragraph px-4 '
-            />
+                    <label>Nombre</label>
+                    <input 
+                        className=' w-[350px] lg:w-[480px] 2xl:w-[616px] h-[48px] rounded-[4px] xl:rounded-[14px] text-black font-paragraph px-4 '
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                    />
                 </div> 
                 <div className='flex flex-col gap-[8px]'>
-                <label>Email</label>
-            <input className=' w-[350px] lg:w-[480px] 2xl:w-[616px] h-[48px] rounded-[4px] xl:rounded-[14px] text-black font-paragraph px-4'/>
-            </div>
-            <div className='flex flex-col gap-[8px]'>
-                <label>Mensaje</label>
-            <textarea className=' w-[350px] lg:w-[480px] 2xl:w-[616px] h-[183px] rounded-[4px] xl:rounded-[14px] text-black font-paragraph px-4'/>
-            </div>
+                    <label>Email</label>
+                    <input 
+                        className=' w-[350px] lg:w-[480px] 2xl:w-[616px] h-[48px] rounded-[4px] xl:rounded-[14px] text-black font-paragraph px-4'
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                </div>
+                <div className='flex flex-col gap-[8px]'>
+                    <label>Mensaje</label>
+                    <textarea 
+                        className=' w-[350px] lg:w-[480px] 2xl:w-[616px] h-[183px] rounded-[4px] xl:rounded-[14px] text-black font-paragraph px-4'
+                        value={message}
+                        onChange={(e) => setMessage(e.target.value)}
+                    />
+                </div>
             <div className='flex items-center'>
                 <input type='checkbox' id='terms' className='mr-4 scale-150' />
                 <label htmlFor='terms'>Acepto los términos y condiciones</label>
