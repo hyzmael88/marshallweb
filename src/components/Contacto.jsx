@@ -94,7 +94,7 @@ function Contacto() {
      ;
 
     return (
-        <div className='w-full h-full lg:h-[968px] bg-brand-secondary flex flex-col-reverse lg:flex-row px-4 lg:px-10 2xl:px-14 gap-[48px] lg:gap-[0px] py-[64px] lg:py-[0px]'>
+        <section id='Contacto' className='w-full h-full lg:h-[968px] bg-brand-secondary flex flex-col-reverse lg:flex-row px-4 lg:px-10 2xl:px-14 gap-[48px] lg:gap-[0px] py-[64px] lg:py-[0px]'>
                 <div className='w-full h-full flex flex-col justify-center items-center'>
 
                 <motion.div 
@@ -159,7 +159,7 @@ function Contacto() {
     </motion.div>
     </div>
        
-        </div>
+        </section>
   )
 }
 

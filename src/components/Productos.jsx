@@ -116,7 +116,7 @@ function Productos() {
 
 
   return (
-    <div className="w-full h-full 2xl:h-[916px] flex flex-col  items-center gap-[40px] px-4 lg:px-14  ">
+    <section id="Productos" className="w-full h-full 2xl:h-[916px] flex flex-col  items-center gap-[40px] px-4 lg:px-14  ">
       <motion.div className="flex flex-col items-center"
        ref={ref}
        initial="hidden"
@@ -238,7 +238,7 @@ function Productos() {
           </motion.div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

@@ -56,9 +56,19 @@ function Navbar() {
     <>
     <div className='hidden w-full h-[72px] lg:flex flex-row justify-around items-center border-b-[2px] border-black px-14  '>
         <ul className='w-full h-full flex flex-row justify-between items-center font-paragraph text-[19px] '>
-            <li className='cursor-pointer hover:bg-brand-secondary hover:text-white w-full h-full flex items-center justify-center'>Acerca</li>
-            <li className='cursor-pointer hover:bg-brand-secondary hover:text-white w-full h-full flex items-center justify-center'>Productos</li>
-            <li className='cursor-pointer hover:bg-brand-secondary hover:text-white w-full h-full flex items-center justify-center'>Contacto</li>
+            <li className='cursor-pointer hover:bg-brand-secondary hover:text-white w-full h-full flex items-center justify-center'> 
+            <a href="#Acerca">
+            Acerca
+            </a>
+            </li>
+            <li className='cursor-pointer hover:bg-brand-secondary hover:text-white w-full h-full flex items-center justify-center'>
+            <a href="#Productos">
+              Productos
+              </a></li>
+            <li className='cursor-pointer hover:bg-brand-secondary hover:text-white w-full h-full flex items-center justify-center'>
+            <a href="#Contacto">
+              Contacto
+              </a></li>
 
         </ul>
         <div className='w-full h-full flex flex-row justify-center items-center'>
