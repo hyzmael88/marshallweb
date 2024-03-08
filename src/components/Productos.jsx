@@ -186,7 +186,6 @@ function Productos() {
               <h5 className="font-header font-semibold text-[18px]">
                 {producto.nombre}
               </h5>
-              <div className="h-[14px]"></div>
               <p className="font-paragraph text-[14px] leading-[21px]">
                 {producto.descripcion}
               </p>
