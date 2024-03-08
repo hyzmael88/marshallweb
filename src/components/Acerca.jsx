@@ -16,7 +16,7 @@ function Acerca() {
         {
             icon: calidad,
             title: 'Calidad desde el primer contacto',
-            description: 'Nuestros productos son laborados con materiales de la más alta calidad, brindando una limpieza superior y eficiente.'
+            description: 'Nuestros productos son elaborados con materiales de la más alta calidad, brindando una limpieza superior y eficiente.'
         },
         {
             icon: garantizado,
