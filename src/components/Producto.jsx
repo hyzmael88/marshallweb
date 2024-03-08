@@ -48,7 +48,6 @@ function Producto({ref3, inView3,producto, variantsInfo, activo, setActivo, inde
         setProductoActivo(null)
     }}
       >
-        {console.log(currentImage)}
         
         <Image src={currentImage} width={1000} height={1000} className="w-full h-full object-cover rounded-[20px] lg:rounded-[40px]" alt="producto" />
         </div>

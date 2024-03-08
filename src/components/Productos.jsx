@@ -263,9 +263,7 @@ function Productos() {
             }
             onClick={() => setPosition(position + 3)}
           >
-            {
-              console.log(position, productos.length )
-            }
+            
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"

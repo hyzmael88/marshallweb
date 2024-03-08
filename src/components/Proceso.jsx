@@ -37,7 +37,6 @@ function Proceso() {
 
   const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
 
-  console.log(isTabletOrMobile)
 
   const variantsH1 = {
     hidden: { opacity: 0,

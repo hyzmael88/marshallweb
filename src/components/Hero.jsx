@@ -4,18 +4,17 @@ import {motion} from 'framer-motion'
 import { useMediaQuery } from 'react-responsive';
 import { useInView } from 'react-intersection-observer'; // Importa useInView
 import Image from "next/image";
-
+import { useRouter } from 'next/router'
 
 
 function Hero() {
+  const router = useRouter()
 
   const [ref, inView] = useInView({
     triggerOnce: true, // Cambia a true para que la animación solo se ejecute una vez
   });
 
   const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
-
-  console.log(isTabletOrMobile)
 
 
   const variantsH1 = isTabletOrMobile ? {
@@ -99,12 +98,13 @@ function Hero() {
           <div className="w-full  flex flex-row justify-center lg:justify-start items-center gap-[8px]">
             <motion.button 
               className="bg-brand-primary shadow-brand w-[139px] rounded-[10px] text-white px-[24px] py-[12px] hover:scale-105 transition-all duration-300"
-              
+              onClick={() => {router.push("/#Productos")}}
             >
               Descubre
             </motion.button>
             <motion.button 
               className="bg-brand-secondary shadow-brand text-white rounded-[10px] w-[139px] px-[24px] py-[12px] hover:scale-105 transition-all duration-300"
+              onClick={() => {router.push("/#Contacto")}}
             
             >
               Contáctanos

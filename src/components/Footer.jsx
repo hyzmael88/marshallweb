@@ -14,19 +14,15 @@ function Footer() {
   },
   {
     nombre: 'Acerca',
-    url: '/Acerca'
+    url: '#Acerca'
   },
   {
     nombre: 'Productos',
-    url: '/Productos'
-  },
-  {
-    nombre: 'Reseñas',
-    url: '/Reseñas'
+    url: '#Productos'
   },
   {
     nombre: 'Contacto',
-    url: '/Contacto'
+    url: '#Contacto'
   },
   ]
 
@@ -56,11 +52,11 @@ function Footer() {
           <a href='mailto:saidmarshall@aol.com' className='text-[14px] font-paragraph underline'>saidmarshall@aol.com</a>
           </div>
           <div className='w-full flex flex-row items-center gap-4 justify-center lg:justify-start '>
-            {
+            {/* {
               social.map((icon, index) => (
                 <a key={index} href={icon.url} className='text-[14px] font-paragraph '>{icon.icono}</a>
               ))
-            }
+            } */}
           </div>
         </div>
         <div className='w-full h-full flex flex-col items-center lg:items-start  justify-start lg:justify-center gap-[12px]'>
