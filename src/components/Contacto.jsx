@@ -103,10 +103,10 @@ function Contacto() {
              animate={inView ? "visible" : "hidden"}
              variants={variantsImage} className='h-[335px] lg:h-[734px] w-full 2xl:w-[616px]  rounded-[20px] lg:rounded-[69px]'>
 
-<Image src='/images/Contact/Contact.png' width={1000} height={1000} className='w-full h-full  object-cover ' alt='contactImage'/>
+<Image src='/images/Contact/Contact.png' width={1000} height={1000} className='w-full h-full  object-contain lg:object-cover ' alt='contactImage'/>
              </motion.div>
                 </div>
-                <div className='w-full h-full flex flex-col justify-center lg:items-center xl:items-end 2xl:items-start  text-white gap-[32px]'>
+                <div className='w-full h-full flex flex-col justify-center lg:items-center  2xl:items-start  text-white gap-[32px]'>
                         <motion.div 
                         ref={ref}
                         initial="hidden"
@@ -123,7 +123,7 @@ function Contacto() {
                 animate={inView2 ? "visible" : "hidden"}
                 variants={variantsInputs}
                 id='form' 
-                className='w-full flex flex-col items-center xl:items-end 2xl:items-start gap-[24px]'
+                className='w-full flex flex-col items-center  2xl:items-start gap-[24px]'
                 onSubmit={sendEmail}
             >
                 <div className=' flex flex-col  gap-[8px]' >

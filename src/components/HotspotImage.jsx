@@ -88,7 +88,7 @@ function HotspotImage() {
              animate={inView ? "visible" : "hidden"}
              variants={variantsImage}
             className='w-[335px] h-[348px] md:w-full lg:w-[532px] md:h-[400px] lg:h-[640px] rounded-[20px] md:rounded-[40px] lg:rounded-[69px] '>
-              <Image src='/images/Hotspot/Hotspot.png' width={1000} height={1000} className='w-full h-full  object-cover ' alt='HotspotImage'/>
+              <Image src='/images/Hotspot/Hotspot.png' width={1000} height={1000} quality={100} className='w-full h-full  object-contain lg:object-cover ' alt='HotspotImage'/>
             </motion.div>
         </div>
        

@@ -179,7 +179,9 @@ function Productos() {
             variants={variantsInfo}
             className="w-full h-full flex flex-col gap-[16px]  justify-center"
           >
-            <div className="w-[300px] lg:w-[320px] xl:w-[355px] 2xl:w-[400px] h-[360px] 2xl:h-[486px] rounded-[20px] lg:rounded-[40px] bg-gray-400" />
+            <div className="w-[300px] lg:w-[320px] xl:w-[355px] 2xl:w-[400px] h-[360px] 2xl:h-[486px] rounded-[20px] lg:rounded-[40px] ">
+              <Image src={producto.image1} width={1000} height={1000} className="w-full h-full object-fill rounded-[20px] lg:rounded-[40px]" alt="producto" />
+              </div>
             <div className=" flex flex-col gap-[8px] ">
               <h5 className="font-header font-semibold text-[18px]">
                 {producto.nombre}
