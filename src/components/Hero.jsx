@@ -116,7 +116,7 @@ function Hero() {
       </div>
       <div className="w-full h-full flex flex-row overflow-hidden gap-2">
         <motion.div
-         className="w-full h-full  flex flex-col gap-2 transform -translate-y-[77px] lg:-translate-y-[130px]"
+         className="w-full h-full  flex flex-col gap-2 transform  -translate-y-[77px] lg:-translate-y-[130px]"
  
  initial="hidden"
  animate={inView ? "visible" : "hidden"}
@@ -125,15 +125,15 @@ function Hero() {
          
          >
 
-          <div className="w-full h-full  rounded-[20px] lg:rounded-[40px]">
+          <div className="w-full h-full  rounded-[20px] lg:rounded-[40px] flex flex--row justify-center">
             <Image src='/images/Hero/foto1.png' alt="herofoto" width={1000} height={1000} quality={100} className="w-[160px] md:h-[340px] md:w-full lg:w-[320px] h-[170px] lg:h-[340px] object-cover rounded-[20px] lg:rounded-[40px]"/>
             </div>
-            <div className="w-full h-full  rounded-[20px] lg:rounded-[40px]">
+            <div className="w-full h-full  rounded-[20px] lg:rounded-[40px] flex flex--row justify-center">
               <Image src='/images/Hero/foto2.png' alt="herofoto" width={1000} height={1000}  quality={100}
              
               className="w-[160px] md:h-[340px] md:w-full lg:w-[320px] h-[170px] lg:h-[340px] object-cover rounded-[20px] lg:rounded-[40px]"/>
             </div>
-            <div className="w-full h-full  rounded-[20px] lg:rounded-[40px]">
+            <div className="w-full h-full  rounded-[20px] lg:rounded-[40px] flex flex--row justify-center">
               <Image src='/images/Hero/foto3.png' alt="herofoto" width={1000} height={1000} quality={100}
               
               className="w-[160px] md:h-[340px] md:w-full lg:w-[320px] h-[170px] lg:h-[340px] object-cover rounded-[20px] lg:rounded-[40px]"/>
@@ -146,19 +146,19 @@ function Hero() {
          animate={inView ? "visible" : "hidden"}
          variants={variantsCol2}
         >
-          <div className="w-full h-full  rounded-[20px] lg:rounded-[40px]">
+          <div className="w-full h-full  rounded-[20px] lg:rounded-[40px] flex flex-row justify-center">
               <Image src='/images/Hero/foto4.png' alt="herofoto" width={1000} height={1000} quality={100}
               
               className="w-[160px] md:h-[340px] md:w-full lg:w-[320px] h-[170px] lg:h-[340px] object-cover rounded-[20px] lg:rounded-[40px]"/>
               
             </div>
-            <div className="w-full h-full  rounded-[20px] lg:rounded-[40px]">
+            <div className="w-full h-full  rounded-[20px] lg:rounded-[40px] flex flex-row justify-center">
               <Image src='/images/Hero/foto5.png' alt="herofoto" width={1000} height={1000} quality={100}
               
               className="w-[160px] md:h-[340px] md:w-full lg:w-[320px] h-[170px] lg:h-[340px] object-cover rounded-[20px] lg:rounded-[40px]"/>
               
             </div>
-            <div className="w-full h-full  rounded-[20px] lg:rounded-[40px]">
+            <div className="w-full h-full  rounded-[20px] lg:rounded-[40px] flex flex-row justify-center">
               <Image src='/images/Hero/foto6.png' alt="herofoto" width={1000} height={1000} quality={100}
               
               className="w-[160px] md:h-[340px] md:w-full lg:w-[320px] h-[170px] lg:h-[340px] object-cover rounded-[20px] lg:rounded-[40px]"/>
