@@ -2,6 +2,7 @@ import React from 'react'
 import {motion} from 'framer-motion'
 import { useMediaQuery } from 'react-responsive';
 import { useInView } from 'react-intersection-observer'; // Importa useInView
+import Image from 'next/image';
 
 
 function HotspotImage() {
@@ -86,7 +87,9 @@ function HotspotImage() {
              initial="hidden"
              animate={inView ? "visible" : "hidden"}
              variants={variantsImage}
-            className='w-[335px] h-[348px] md:w-full lg:w-[532px] md:h-[400px] lg:h-[640px] rounded-[20px] md:rounded-[40px] lg:rounded-[69px] bg-gray-300 shadow-brand'></motion.div>
+            className='w-[335px] h-[348px] md:w-full lg:w-[532px] md:h-[400px] lg:h-[640px] rounded-[20px] md:rounded-[40px] lg:rounded-[69px] '>
+              <Image src='/images/Hotspot/Hotspot.png' width={1000} height={1000} className='w-full h-full  object-cover ' alt='HotspotImage'/>
+            </motion.div>
         </div>
        
 

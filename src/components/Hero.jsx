@@ -3,6 +3,7 @@ import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import {motion} from 'framer-motion'
 import { useMediaQuery } from 'react-responsive';
 import { useInView } from 'react-intersection-observer'; // Importa useInView
+import Image from "next/image";
 
 
 
@@ -124,18 +125,18 @@ function Hero() {
          
          >
 
-          <div className="w-full h-full bg-gray-600 rounded-[20px] lg:rounded-[40px]">
-            <div className="w-[160px] md:h-[340px] md:w-[150px] lg:w-[320px] h-[170px] lg:h-[340px]"/>
+          <div className="w-full h-full  rounded-[20px] lg:rounded-[40px]">
+            <Image src='/images/Hero/foto1.png' alt="herofoto" width={1000} height={1000} quality={100} className="w-[160px] md:h-[340px] md:w-[150px] lg:w-[320px] h-[170px] lg:h-[340px] object-cover rounded-[20px] lg:rounded-[40px]"/>
             </div>
-            <div className="w-full h-full bg-gray-600 rounded-[20px] lg:rounded-[40px]">
-              <div
+            <div className="w-full h-full  rounded-[20px] lg:rounded-[40px]">
+              <Image src='/images/Hero/foto2.png' alt="herofoto" width={160} height={340} quality={100}
              
-              className="w-[160px] md:h-[340px] md:w-[150px] lg:w-[320px] h-[170px] lg:h-[340px]"/>
+              className="w-[160px] md:h-[340px] md:w-[150px] lg:w-[320px] h-[170px] lg:h-[340px] object-cover rounded-[20px] lg:rounded-[40px]"/>
             </div>
-            <div className="w-full h-full bg-gray-600 rounded-[20px] lg:rounded-[40px]">
-              <div
+            <div className="w-full h-full  rounded-[20px] lg:rounded-[40px]">
+              <Image src='/images/Hero/foto3.png' alt="herofoto" width={1000} height={1000} quality={100}
               
-              className="w-[160px] md:h-[340px] md:w-[150px] lg:w-[320px] h-[170px] lg:h-[340px]"/>
+              className="w-[160px] md:h-[340px] md:w-[150px] lg:w-[320px] h-[170px] lg:h-[340px] object-cover rounded-[20px] lg:rounded-[40px]"/>
               
             </div>
           
@@ -145,15 +146,24 @@ function Hero() {
          animate={inView ? "visible" : "hidden"}
          variants={variantsCol2}
         >
-          <div className="w-full h-full bg-gray-600 rounded-[20px] lg:rounded-[40px]">
-            <div className="w-[160px] md:h-[340px] md:w-[150px] lg:w-[320px] h-[170px] lg:h-[340px]"></div>
-          </div>
-          <div className="w-full h-full bg-gray-600 rounded-[20px] lg:rounded-[40px]">
-            <div className="w-[160px] md:h-[340px] md:w-[150px] lg:w-[320px] h-[170px] lg:h-[340px]"></div>
-          </div>
-          <div className="w-full h-full bg-gray-600 rounded-[20px] lg:rounded-[40px]">
-            <div className="w-[160px] md:h-[340px] md:w-[150px] lg:w-[320px] h-[170px] lg:h-[340px]"></div>
-          </div>
+          <div className="w-full h-full  rounded-[20px] lg:rounded-[40px]">
+              <Image src='/images/Hero/foto4.png' alt="herofoto" width={1000} height={1000} quality={100}
+              
+              className="w-[160px] md:h-[340px] md:w-[150px] lg:w-[320px] h-[170px] lg:h-[340px] object-cover rounded-[20px] lg:rounded-[40px]"/>
+              
+            </div>
+            <div className="w-full h-full  rounded-[20px] lg:rounded-[40px]">
+              <Image src='/images/Hero/foto5.png' alt="herofoto" width={1000} height={1000} quality={100}
+              
+              className="w-[160px] md:h-[340px] md:w-[150px] lg:w-[320px] h-[170px] lg:h-[340px] object-cover rounded-[20px] lg:rounded-[40px]"/>
+              
+            </div>
+            <div className="w-full h-full  rounded-[20px] lg:rounded-[40px]">
+              <Image src='/images/Hero/foto6.png' alt="herofoto" width={1000} height={1000} quality={100}
+              
+              className="w-[160px] md:h-[340px] md:w-[150px] lg:w-[320px] h-[170px] lg:h-[340px] object-cover rounded-[20px] lg:rounded-[40px]"/>
+              
+            </div>
         </motion.div>
       </div>
       <span
