@@ -51,21 +51,21 @@ function Testimonios() {
             estrellas: 5,
             testimonio: "Excelente calidad y durabilidad. Los trapos de esta empresa son realmente resistentes y han sido una solución eficaz para nuestras necesidades de limpieza en el taller. ¡Altamente recomendados!",
             nombre: "Juan Perez",
-            cargo: "Director de Ventas",
+            cargo: "Gerente de Operaciones",
             empresa: "Empresa X"
         },
         {
             estrellas: 5,
-            testimonio: "Impresionados con la eficiencia. Hemos estado utilizando los productos de esta empresa y la absorbencia es increíble.i Ideales para diversas tareas, una inversión que vale la pena.",
+            testimonio: "Impresionados con la eficiencia. Hemos estado utilizando los productos de esta empresa y la absorbencia es increíble. Ideales para diversas tareas, una inversión que vale la pena.",
             nombre: "Juan Perez",
-            cargo: "Director de Ventas",
+            cargo: "Director General",
             empresa: "Empresa X"
         },
         {
             estrellas: 5,
             testimonio: "Servicio al cliente excepcional. Desde el momento en que hicimos nuestro pedido hasta la entrega, la atención y el profesionalismo de esta empresa fueron notables.  ",
             nombre: "Juan Perez",
-            cargo: "Director de Ventas",
+            cargo: "Gerente de Compras",
             empresa: "Empresa X"
         }
     ]
@@ -108,7 +108,7 @@ function Testimonios() {
                 </p>
                 <div className='flex flex-col'>
                     <h5 className='font-header text-[16px] font-semibold'>{testimonio.nombre}</h5>
-                    <p>{testimonio.cargo},{testimonio.empresa}</p>
+                    <p>{testimonio.cargo}</p>
                     </div>
         </motion.div>
                 ))
