@@ -3,6 +3,7 @@ import {motion} from 'framer-motion'
 import { useMediaQuery } from 'react-responsive';
 import { useInView } from 'react-intersection-observer'; // Importa useInView
 import emailjs from '@emailjs/browser';
+import Image from 'next/image';
 
 
 function Contacto() {
@@ -100,7 +101,10 @@ function Contacto() {
                 <motion.div 
                  initial="hidden"
              animate={inView ? "visible" : "hidden"}
-             variants={variantsImage} className='h-[335px] lg:h-[734px] w-full 2xl:w-[616px] bg-gray-400 rounded-[20px] lg:rounded-[69px]'></motion.div>
+             variants={variantsImage} className='h-[335px] lg:h-[734px] w-full 2xl:w-[616px]  rounded-[20px] lg:rounded-[69px]'>
+
+<Image src='/images/Contact/Contact.png' width={1000} height={1000} className='w-full h-full  object-cover ' alt='contactImage'/>
+             </motion.div>
                 </div>
                 <div className='w-full h-full flex flex-col justify-center lg:items-center xl:items-end 2xl:items-start  text-white gap-[32px]'>
                         <motion.div 
