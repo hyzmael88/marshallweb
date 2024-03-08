@@ -3,8 +3,10 @@ import React from 'react'
 import navLogo from '../../public/images/navLogo.png'
 import {motion} from 'framer-motion'
 import { useMediaQuery } from 'react-responsive';
+import {useRouter} from 'next/router';
 
 function Navbar() {
+  const router = useRouter()
 
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
 
@@ -87,6 +89,7 @@ function Navbar() {
             initial="hidden"
             animate="visible"
             variants={variantsButton}
+            onClick={()=>router.push('/#Contacto')}
             className='px-[20px] py-[8px] bg-brand-primary rounded-[10px]  text-white  hover:scale-105 uppercase  hover:animate-none'>cotizar</motion.button>
         </div>
 
