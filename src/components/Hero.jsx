@@ -126,17 +126,17 @@ function Hero() {
          >
 
           <div className="w-full h-full  rounded-[20px] lg:rounded-[40px]">
-            <Image src='/images/Hero/foto1.png' alt="herofoto" width={1000} height={1000} quality={100} className="w-[160px] md:h-[340px] md:w-[150px] lg:w-[320px] h-[170px] lg:h-[340px] object-cover rounded-[20px] lg:rounded-[40px]"/>
+            <Image src='/images/Hero/foto1.png' alt="herofoto" width={1000} height={1000} quality={100} className="w-[160px] md:h-[340px] md:w-full lg:w-[320px] h-[170px] lg:h-[340px] object-cover rounded-[20px] lg:rounded-[40px]"/>
             </div>
             <div className="w-full h-full  rounded-[20px] lg:rounded-[40px]">
-              <Image src='/images/Hero/foto2.png' alt="herofoto" width={160} height={340} quality={100}
+              <Image src='/images/Hero/foto2.png' alt="herofoto" width={1000} height={1000}  quality={100}
              
-              className="w-[160px] md:h-[340px] md:w-[150px] lg:w-[320px] h-[170px] lg:h-[340px] object-cover rounded-[20px] lg:rounded-[40px]"/>
+              className="w-[160px] md:h-[340px] md:w-full lg:w-[320px] h-[170px] lg:h-[340px] object-cover rounded-[20px] lg:rounded-[40px]"/>
             </div>
             <div className="w-full h-full  rounded-[20px] lg:rounded-[40px]">
               <Image src='/images/Hero/foto3.png' alt="herofoto" width={1000} height={1000} quality={100}
               
-              className="w-[160px] md:h-[340px] md:w-[150px] lg:w-[320px] h-[170px] lg:h-[340px] object-cover rounded-[20px] lg:rounded-[40px]"/>
+              className="w-[160px] md:h-[340px] md:w-full lg:w-[320px] h-[170px] lg:h-[340px] object-cover rounded-[20px] lg:rounded-[40px]"/>
               
             </div>
           
@@ -149,19 +149,19 @@ function Hero() {
           <div className="w-full h-full  rounded-[20px] lg:rounded-[40px]">
               <Image src='/images/Hero/foto4.png' alt="herofoto" width={1000} height={1000} quality={100}
               
-              className="w-[160px] md:h-[340px] md:w-[150px] lg:w-[320px] h-[170px] lg:h-[340px] object-cover rounded-[20px] lg:rounded-[40px]"/>
+              className="w-[160px] md:h-[340px] md:w-full lg:w-[320px] h-[170px] lg:h-[340px] object-cover rounded-[20px] lg:rounded-[40px]"/>
               
             </div>
             <div className="w-full h-full  rounded-[20px] lg:rounded-[40px]">
               <Image src='/images/Hero/foto5.png' alt="herofoto" width={1000} height={1000} quality={100}
               
-              className="w-[160px] md:h-[340px] md:w-[150px] lg:w-[320px] h-[170px] lg:h-[340px] object-cover rounded-[20px] lg:rounded-[40px]"/>
+              className="w-[160px] md:h-[340px] md:w-full lg:w-[320px] h-[170px] lg:h-[340px] object-cover rounded-[20px] lg:rounded-[40px]"/>
               
             </div>
             <div className="w-full h-full  rounded-[20px] lg:rounded-[40px]">
               <Image src='/images/Hero/foto6.png' alt="herofoto" width={1000} height={1000} quality={100}
               
-              className="w-[160px] md:h-[340px] md:w-[150px] lg:w-[320px] h-[170px] lg:h-[340px] object-cover rounded-[20px] lg:rounded-[40px]"/>
+              className="w-[160px] md:h-[340px] md:w-full lg:w-[320px] h-[170px] lg:h-[340px] object-cover rounded-[20px] lg:rounded-[40px]"/>
               
             </div>
         </motion.div>
