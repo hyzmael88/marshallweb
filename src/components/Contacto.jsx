@@ -17,25 +17,38 @@ function Contacto() {
   const sendEmail = (e) => {
       e.preventDefault();
 
+      const terms = document.getElementById('terms').checked;
       const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY; 
-      console.log(publicKey)
+   
+    
 
-      try {
-        emailjs.send('service_elxnwr3', 'template_ih6zja7', { name, email, message }, publicKey)
-        .then((response) => {
-           console.log('SUCCESS!', response.status, response.text);
-           setName("")
-           setEmail("")
-           setMessage("")
-        }, (err) => {
-           console.log('FAILED...', err);
-        });
-     
-      } catch (error) {
-        console.log(error)
-      }
-     
+  if (!terms) {
+    alert('Debes aceptar los términos y condiciones');
+    return;
   }
+  if(name.length> 3  && email.length>3 && message.length>3){
+    console.log("entre")
+    try {
+      emailjs.send('service_elxnwr3', 'template_ih6zja7', { name, email, message }, publicKey)
+      .then((response) => {
+        console.log('SUCCESS!', response.status, response.text);
+        setName("")
+        setEmail("")
+        setMessage("")
+      }, (err) => {
+        console.log('FAILED...', err);
+      });
+      
+    } catch (error) {
+      console.log(error)
+    }
+    
+  }
+  else{
+    alert('Debes rellenar todos los campos');
+    return;
+  }
+}
 
     
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
