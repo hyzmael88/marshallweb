@@ -52,13 +52,28 @@ function Producto({ref3, inView3,producto, variantsInfo, activo, setActivo, inde
         <Image src={currentImage} width={1000} height={1000} className="w-full h-full object-cover rounded-[20px] lg:rounded-[40px]" alt="producto" />
         </div>
 
-      <div className=" flex flex-col gap-[8px] ">
+      <div className=" h-[250px] w-full flex flex-col gap-[8px] ">
         <h5 className="font-header font-semibold text-[18px] h-[30px]">
           {producto.nombre}
         </h5>
         <div className="h-[14px]"></div>
+        {
+          producto.recomendacion&&
+          <p className="font-paragraph text-[14px] leading-[21px]">
+          <span className='font-bold'>Recomendacion de uso: </span>{producto.recomendacion}
+        </p>
+        
+        }
+       
         <p className="font-paragraph text-[14px] leading-[21px]">
           {producto.descripcion}
+        </p>
+        <p className="font-paragraph text-[14px] leading-[21px]">
+        <span className='font-bold'>Material: </span>
+          {producto.material}
+        </p>
+        <p className="font-paragraph text-[14px] leading-[21px]">
+        <span className='font-bold'>Empaque: </span>{producto.empaque}
         </p>
       </div>
     </motion.div>

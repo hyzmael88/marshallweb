@@ -13,8 +13,12 @@ function Productos() {
       image1: "/images/Trapos/PUNTA_COLOR_029.jpg",
       image2: "/images/Trapos/PUNTA_COLOR_030.jpg",
       image3: "/images/Trapos/PUNTA_COLOR_031.jpg",
-      descripcion:
-        "Elaborado con tela de algodón, es ideal para limpiar pisos, paredes, muebles",
+      recomendacion:
+        " Industrial metálica, mecánica automotriz.",
+           descripcion:"Se caracteriza por tener extremos de diferentes colores.",
+        material: "Algodón",
+        empaque: "Pacas de 5 a 50KG",
+        
       imagen: "",
       colores: [],
     },
@@ -24,8 +28,12 @@ function Productos() {
       image1: "/images/Trapos/PUNTA_PASTEL_017.jpg",
       image2: "/images/Trapos/PUNTA_PASTEL_018.jpg",
       image3: "/images/Trapos/PUNTA_PASTEL_019.jpg",
-      descripcion:
-        "Elaborado con tela de algodón, es ideal para limpiar pisos, paredes, muebles",
+      recomendacion:
+        "",
+           descripcion:"Se caracteriza por tener extremos de diferentes tonos suaves y delicados.",
+        material: "Algodón",
+        empaque: "Pacas de 5 a 50KG",
+        
       imagen: "",
       colores: [],
     },
@@ -35,10 +43,14 @@ function Productos() {
       image1: "/images/Trapos/TKT_COLOR_005.jpg",
       image2: "/images/Trapos/TKT_COLOR_006.jpg",
       image3: "/images/Trapos/TKT_COLOR_007.jpg",
-      descripcion:
-        "Elaborado con tela de algodón, es ideal para limpiar pisos, paredes, muebles",
-      imagen: "",
+      recomendacion:
+        " Industrial metálica, mecánica automotriz.",
+           descripcion:"Trapos de limpieza de tejido de algodón reciclado de color.",
+        imagen: "",
       colores: [],
+      material: "Algodón",
+        empaque: "Pacas de 5 a 50KG",
+        
     },
     {
       id: 4,
@@ -46,10 +58,14 @@ function Productos() {
       image1: "/images/Trapos/TKT_BLANCO_033.jpg",
       image2: "/images/Trapos/TKT_BLANCO_034.jpg",
       image3: "/images/Trapos/TKT_BLANCO_035.jpg",
-      descripcion:
-        "Elaborado con tela de algodón, es ideal para limpiar pisos, paredes, muebles",
-      imagen: "",
+      recomendacion:
+        "Limpieza especializada de partes pequeñas, laboratorios, plásticos, industria de alimentos.",
+           descripcion:"Trapos de limpieza de tejido de algodón reciclado en color blanco.",
+        imagen: "",
       colores: [],
+      material: "Algodón",
+        empaque: "Pacas de 5 a 50KG",
+        
     },
     {
       id: 5,
@@ -57,10 +73,14 @@ function Productos() {
       image1: "/images/Trapos/UNIDO_COLOR_021.jpg",
       image2: "/images/Trapos/UNIDO_COLOR_022.jpg",
       image3: "/images/Trapos/UNIDO_COLOR_023.jpg",
-      descripcion:
-        "Elaborado con tela de algodón, es ideal para limpiar pisos, paredes, muebles",
-      imagen: "",
+      recomendacion:
+        "Industrial metálica, mecánica automotriz.",
+           descripcion:"Trapos de limpieza unidos o cosidos con hilos de diferentes colores.",
+        imagen: "",
       colores: [],
+      material: "Algodón",
+        empaque: "Pacas de 5 a 50KG",
+        
     },
     {
       id: 6,
@@ -68,10 +88,14 @@ function Productos() {
       image1: "/images/Trapos/UNIDO_BLANCO_036.jpg",
       image2: "/images/Trapos/UNIDO_BLANCO_037.jpg",
       image3: "/images/Trapos/UNIDO_BLANCO_038.jpg",
-      descripcion:
-        "Elaborado con tela de algodón, es ideal para limpiar pisos, paredes, muebles",
-      imagen: "",
+      recomendacion:
+        " Limpieza especializada de partes pequeñas, laboratorios, plásticos, industria de alimentos.",
+           descripcion:"Trapos de limpieza que están unidos o cosidos con hilos blancos.",
+        imagen: "",
       colores: [],
+      material: "Algodón",
+        empaque: "Pacas de 5 a 50KG",
+        
     },
     {
       id: 7,
@@ -79,10 +103,14 @@ function Productos() {
       image1: "/images/Trapos/UNIDO_PASTEL_010.jpg",
       image2: "/images/Trapos/UNIDO_PASTEL_011.jpg",
       image3: "/images/Trapos/UNIDO_PASTEL_012.jpg",
-      descripcion:
-        "Elaborado con tela de algodón, es ideal para limpiar pisos, paredes, muebles",
-      imagen: "",
+      recomendacion:
+        "",
+           descripcion:"Trapos de limpieza unidos o cosidos con hilos en tonos suaves y delicados, típicamente asociados con tonos pastel.",
+        imagen: "",
       colores: [],
+      material: "Algodón",
+        empaque: "Pacas de 5 a 50KG",
+        
     },
   ];
 
@@ -182,13 +210,26 @@ function Productos() {
             <div className="w-[300px] lg:w-[320px] xl:w-[355px] 2xl:w-[400px] h-[360px] 2xl:h-[486px] rounded-[20px] lg:rounded-[40px] ">
               <Image src={producto.image1} width={1000} height={1000} className="w-full h-full object-fill rounded-[20px] lg:rounded-[40px]" alt="producto" />
               </div>
-            <div className=" flex flex-col gap-[8px] ">
+            <div className="h-[250px] w-full flex flex-col gap-[8px] ">
               <h5 className="font-header font-semibold text-[18px]">
                 {producto.nombre}
               </h5>
-              <p className="font-paragraph text-[14px] leading-[21px]">
-                {producto.descripcion}
-              </p>
+              {
+          producto.recomendacion&&
+          <p className="font-paragraph text-[14px] leading-[21px]">
+          <span className='font-bold'>Recomendacion de uso: </span>{producto.recomendacion}
+        </p>
+        }
+             <p className="font-paragraph text-[14px] leading-[21px]">
+          {producto.descripcion}
+        </p>
+        <p className="font-paragraph text-[14px] leading-[21px]">
+        <span className='font-bold'>Material: </span>
+          {producto.material}
+        </p>  
+        <p className="font-paragraph text-[14px] leading-[21px]">
+        <span className='font-bold'>Empaque: </span>{producto.empaque}
+        </p>
             </div>
           </motion.div>
         ))}

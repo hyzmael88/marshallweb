@@ -90,10 +90,7 @@ function Hero() {
           <p className="w-full lg:w-[95%] xl:w-[576px] font-paragraph text-[16px] lg:text-[18px] font-normal leading-[24px] lg:leading-[27px] text-center lg:text-start mb-4"
            
           >
-            Experimenta la más alta calidad de trapo industrial en el mercado,
-            que harán la diferencia en tu negocio gracias a nuestra eficacia y
-            versatilidad mejorando la productividad y eficiencia de tus
-            instalaciones.
+            Descubre la excelencia de nuestros trapos industriales de primera calidad, diseñados para potenciar a los profesionales especializados en mantener la precisión y la limpieza en su trabajo con total confianza.
           </p>
           <div className="w-full  flex flex-row justify-center lg:justify-start items-center gap-[8px]">
             <motion.button 
