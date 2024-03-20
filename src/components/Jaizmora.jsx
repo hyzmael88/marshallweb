@@ -1,13 +1,16 @@
 import React from 'react'
+import {useRouter} from 'next/router'
 
 function Jaizmora() {
-  const currentYear = new Date().getFullYear();
+ const router = useRouter()
 
   return (
-    <div className='w-full h-[100px] bg-black flex flex-row justify-between items-center px-4 lg:px-14 border-t-2 border-black text-white'>
-      <p className='w-full text-[14px] flex flex-row justify-start'>© {currentYear} Productos Industriales Marshall. <br className='lg:hidden'/>All rights reserved.</p>
-      <span className='w-full text-[14px] flex flex-row justify-end'>Jaizmora Digital Media</span>
-    </div>
+    <div className="w-full h-[70px] flex flex-row justify-center items-center text-white bg-black text-[15px] font-paragraph z-10">
+    Website made by{" "}
+    <span className="text-white cursor-pointer mx-[4px] font-bold"
+    onClick={()=>router.push("https://www.instagram.com/jaizmora_agency/")}
+    >Jaizmora Digital Media  </span> 
+  </div>
   );
 }
 
