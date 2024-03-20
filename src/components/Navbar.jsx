@@ -110,6 +110,7 @@ function Navbar() {
              initial="hidden"
              animate="visible"
              variants={variantsButton}
+             onClick={()=>router.push('/#Contacto')}
             className='px-[20px] py-[8px] bg-brand-primary rounded-[10px]  text-white uppercase'>cotizar</motion.button>
         </div>
     
