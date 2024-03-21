@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import {motion} from 'framer-motion'
 import { useMediaQuery } from 'react-responsive';
@@ -14,7 +14,13 @@ function Hero() {
     triggerOnce: true, // Cambia a true para que la animación solo se ejecute una vez
   });
 
-  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
+  const [isTabletOrMobile, setIsTabletOrMobile] = useState(false); // valor inicial que se renderizará en el servidor
+
+  useEffect(() => {
+    // lógica que calcula isTabletOrMobile
+    const isTabletOrMobile = window.innerWidth < 1224; // o cualquier lógica que estés utilizando
+    setIsTabletOrMobile(isTabletOrMobile);
+  }, []);
 
 
   const variantsH1 = isTabletOrMobile ? {

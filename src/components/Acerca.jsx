@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import calidad from '../../public/images/Acerca/calidad.svg'
 import garantizado from '../../public/images/Acerca/garantizado.svg'
@@ -30,7 +30,13 @@ function Acerca() {
         },
     ]
 
-    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
+    const [isTabletOrMobile, setIsTabletOrMobile] = useState(false); // valor inicial que se renderizará en el servidor
+
+    useEffect(() => {
+      // lógica que calcula isTabletOrMobile
+      const isTabletOrMobile = window.innerWidth < 1224; // o cualquier lógica que estés utilizando
+      setIsTabletOrMobile(isTabletOrMobile);
+    }, []);
 
     const [ref, inView] = useInView({
       triggerOnce: true, // Cambia a true para que la animación solo se ejecute una vez

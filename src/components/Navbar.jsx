@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import navLogo from '../../public/images/navLogo.png'
 import {motion} from 'framer-motion'
 import { useMediaQuery } from 'react-responsive';
@@ -8,7 +8,13 @@ import {useRouter} from 'next/router';
 function Navbar() {
   const router = useRouter()
 
-    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
+  const [isTabletOrMobile, setIsTabletOrMobile] = useState(false); // valor inicial que se renderizará en el servidor
+
+  useEffect(() => {
+    // lógica que calcula isTabletOrMobile
+    const isTabletOrMobile = window.innerWidth < 1224; // o cualquier lógica que estés utilizando
+    setIsTabletOrMobile(isTabletOrMobile);
+  }, []);
 
 
     const variantsLogo = isTabletOrMobile ? {
