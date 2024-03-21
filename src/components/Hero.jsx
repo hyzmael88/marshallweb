@@ -14,16 +14,10 @@ function Hero() {
     triggerOnce: true, // Cambia a true para que la animación solo se ejecute una vez
   });
 
-  const [isTabletOrMobile, setIsTabletOrMobile] = useState(false); // valor inicial que se renderizará en el servidor
+  const isLarge = useMediaQuery({ query: "(min-width: 1024px)" });
+  console.log(isLarge)
 
-  useEffect(() => {
-    // lógica que calcula isTabletOrMobile
-    const isTabletOrMobile = window.innerWidth < 1224; // o cualquier lógica que estés utilizando
-    setIsTabletOrMobile(isTabletOrMobile);
-  }, []);
-
-
-  const variantsH1 = isTabletOrMobile ? {
+  const variantsH1 = !isLarge ? {
     hidden: { opacity: 0,
     y:0 },
     visible: {
@@ -32,14 +26,16 @@ function Hero() {
       transition: { duration: 3, ease: "easeOut" }
     }
   } : {
-    hidden: { y: -100 },
+    hidden: { y: -100,
+    opacity: 0 },
     visible: { 
       y: 0,
+      opacity: 1,
       transition: { duration: 3, ease: "easeOut" }
     }
   } 
  ;
-  const variantsP = isTabletOrMobile ? {
+  const variantsP = isLarge ? {
     hidden: { y: 100 },
     visible: { 
       y: 0,
@@ -54,7 +50,7 @@ function Hero() {
     }
   }
 
-  const variantsCol1 = isTabletOrMobile ? {
+  const variantsCol1 = !isLarge ? {
     hidden: { y: 0 },
     visible: { y: -130, 
       transition: { duration: 3, ease: "easeOut" } }
@@ -64,7 +60,7 @@ function Hero() {
     visible: { y: -130, 
       transition: { duration: 3, ease: "easeOut" } }
   }
-  const variantsCol2 = isTabletOrMobile ? {
+  const variantsCol2 = !isLarge ? {
     hidden: { y: -130 },
     visible: { y: 0, 
       transition: { duration: 3, ease: "easeOut" }
@@ -85,7 +81,7 @@ function Hero() {
            initial="hidden"
            animate="visible"
            variants={variantsH1}
-           className="font-header font-bold leading-[48px] lg:leading-[67px] text-[40px] lg:text-[56px] w-full lg:w-[95%] xl:w-[576px] text-center lg:text-start">
+           className="font-header font-bold leading-[48px] lg:leading-[67px] text-[40px] lg:text-[56px] w-full lg:w-[95%] xl:w-[576px] text-center lg:text-start ">
             Descubra el poder de nuestras soluciones de limpieza
           </motion.h1>
           <motion.div className="w-full h-full"
@@ -128,18 +124,18 @@ function Hero() {
          
          >
 
-          <div className="w-full h-full  rounded-[20px] lg:rounded-[40px] flex flex--row justify-center">
-            <Image src='/images/Hero/foto1.png' alt="herofoto" width={1000} height={1000} quality={100} className="w-[160px] md:h-[340px] md:w-full lg:w-[320px] h-[170px] lg:h-[340px] object-cover rounded-[20px] lg:rounded-[40px]"/>
+          <div className="w-full h-full  rounded-[20px] lg:rounded-[40px] flex flex-row justify-center">
+            <Image src='/images/Hero/foto1.png' alt="herofoto" width={1000} height={1000} quality={100} className="w-full md:h-[340px] md:w-full lg:w-[320px] h-[170px] lg:h-[340px] object-cover rounded-[20px] lg:rounded-[40px]"/>
             </div>
-            <div className="w-full h-full  rounded-[20px] lg:rounded-[40px] flex flex--row justify-center">
+            <div className="w-full h-full  rounded-[20px] lg:rounded-[40px] flex flex-row justify-center">
               <Image src='/images/Hero/foto2.png' alt="herofoto" width={1000} height={1000}  quality={100}
              
-              className="w-[160px] md:h-[340px] md:w-full lg:w-[320px] h-[170px] lg:h-[340px] object-cover rounded-[20px] lg:rounded-[40px]"/>
+              className="w-full md:h-[340px] md:w-full lg:w-[320px] h-[170px] lg:h-[340px] object-cover rounded-[20px] lg:rounded-[40px]"/>
             </div>
-            <div className="w-full h-full  rounded-[20px] lg:rounded-[40px] flex flex--row justify-center">
+            <div className="w-full h-full  rounded-[20px] lg:rounded-[40px] flex flex-row justify-center">
               <Image src='/images/Hero/foto3.png' alt="herofoto" width={1000} height={1000} quality={100}
               
-              className="w-[160px] md:h-[340px] md:w-full lg:w-[320px] h-[170px] lg:h-[340px] object-cover rounded-[20px] lg:rounded-[40px]"/>
+              className="w-full md:h-[340px] md:w-full lg:w-[320px] h-[170px] lg:h-[340px] object-cover rounded-[20px] lg:rounded-[40px]"/>
               
             </div>
           
@@ -152,19 +148,19 @@ function Hero() {
           <div className="w-full h-full  rounded-[20px] lg:rounded-[40px] flex flex-row justify-center">
               <Image src='/images/Hero/foto4.png' alt="herofoto" width={1000} height={1000} quality={100}
               
-              className="w-[160px] md:h-[340px] md:w-full lg:w-[320px] h-[170px] lg:h-[340px] object-cover rounded-[20px] lg:rounded-[40px]"/>
+              className="w-full md:h-[340px] md:w-full lg:w-[320px] h-[170px] lg:h-[340px] object-cover rounded-[20px] lg:rounded-[40px]"/>
               
             </div>
             <div className="w-full h-full  rounded-[20px] lg:rounded-[40px] flex flex-row justify-center">
               <Image src='/images/Hero/foto5.png' alt="herofoto" width={1000} height={1000} quality={100}
               
-              className="w-[160px] md:h-[340px] md:w-full lg:w-[320px] h-[170px] lg:h-[340px] object-cover rounded-[20px] lg:rounded-[40px]"/>
+              className="w-full md:h-[340px] md:w-full lg:w-[320px] h-[170px] lg:h-[340px] object-cover rounded-[20px] lg:rounded-[40px]"/>
               
             </div>
             <div className="w-full h-full  rounded-[20px] lg:rounded-[40px] flex flex-row justify-center">
               <Image src='/images/Hero/foto6.png' alt="herofoto" width={1000} height={1000} quality={100}
               
-              className="w-[160px] md:h-[340px] md:w-full lg:w-[320px] h-[170px] lg:h-[340px] object-cover rounded-[20px] lg:rounded-[40px]"/>
+              className="w-full md:h-[340px] md:w-full lg:w-[320px] h-[170px] lg:h-[340px] object-cover rounded-[20px] lg:rounded-[40px]"/>
               
             </div>
         </motion.div>

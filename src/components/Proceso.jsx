@@ -35,14 +35,7 @@ function Proceso() {
       triggerOnce: true, // Cambia a true para que la animación solo se ejecute una vez
     });
 
-    const [isTabletOrMobile, setIsTabletOrMobile] = useState(false); // valor inicial que se renderizará en el servidor
-
-  useEffect(() => {
-    // lógica que calcula isTabletOrMobile
-    const isTabletOrMobile = window.innerWidth < 1224; // o cualquier lógica que estés utilizando
-    setIsTabletOrMobile(isTabletOrMobile);
-  }, []);
-
+    const isLarge = useMediaQuery({ query: "(min-width: 1024px)" });
 
   const variantsH1 = {
     hidden: { opacity: 0,
@@ -54,7 +47,7 @@ function Proceso() {
     }
   } 
 
-  const variantsBackground = !isTabletOrMobile ? {
+  const variantsBackground = isLarge ? {
     hidden: { y: -20 },
     visible: { 
       y: 0,
@@ -84,9 +77,7 @@ function Proceso() {
   return (
     <div  className='w-full px-4 lg:px-14 h-full lg:h-[605px] flex flex-col lg:flex-row justify-between items-center py-[60px] gap-8 '>
         <div  className='w-full h-full flex flex-col items-center lg:items-start justify-center'>
-          {
-            console.log(inView)
-          }
+          
         <motion.div 
         ref={ref}
          initial="hidden"

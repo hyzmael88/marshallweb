@@ -11,16 +11,9 @@ function HotspotImage() {
     triggerOnce: true, // Cambia a true para que la animación solo se ejecute una vez
   });
 
-  const [isTabletOrMobile, setIsTabletOrMobile] = useState(false); // valor inicial que se renderizará en el servidor
+  const isLarge = useMediaQuery({ query: "(min-width: 1024px)" });
 
-  useEffect(() => {
-    // lógica que calcula isTabletOrMobile
-    const isTabletOrMobile = window.innerWidth < 1224; // o cualquier lógica que estés utilizando
-    setIsTabletOrMobile(isTabletOrMobile);
-  }, []);
-
-
-  const variantsH1 = isTabletOrMobile ? {
+  const variantsH1 = !isLarge ? {
     hidden: { opacity: 0,
     y:0 },
     visible: { 
@@ -29,29 +22,35 @@ function HotspotImage() {
       transition: { duration: 2, ease: "easeOut" }
     }
   } : {
-    hidden: { y: -100 },
+    hidden: { y: -100,
+    opacity: 0 },
     visible: { 
       y: 0,
+      opacity: 1,
       transition: { duration: 2, ease: "easeOut" }
     }
   };
 
-  const variantsP = isTabletOrMobile ? {
-    hidden: { y: 100 },
+  const variantsP = !isLarge ? {
+    hidden: { y: 100,
+    opacity: 0 },
     visible: { 
       y: 0,
+      opacity: 1,
       transition: { duration: 2, ease: "easeOut" }
     }
   }
   : {
-    hidden: { y: 20 },
+    hidden: { y: 20,
+    opacity: 0 },
     visible: { 
       y: 0,
+      opacity: 1,
       transition: { duration: 2, ease: "easeOut" }
     }
   };
 
-  const variantsImage = isTabletOrMobile ? {
+  const variantsImage = !isLarge ? {
     hidden: { scale: 0.9 },
     visible: { 
       scale: 1,

@@ -8,29 +8,25 @@ import {useRouter} from 'next/router';
 function Navbar() {
   const router = useRouter()
 
-  const [isTabletOrMobile, setIsTabletOrMobile] = useState(false); // valor inicial que se renderizará en el servidor
-
-  useEffect(() => {
-    // lógica que calcula isTabletOrMobile
-    const isTabletOrMobile = window.innerWidth < 1224; // o cualquier lógica que estés utilizando
-    setIsTabletOrMobile(isTabletOrMobile);
-  }, []);
+  const isLarge = useMediaQuery({ query: "(min-width: 1024px)" });
 
 
-    const variantsLogo = isTabletOrMobile ? {
-        hidden: { x: -100 },
-        visible: { 
-            x: 0,
-            transition: { duration: 2, ease: "easeOut" }
-        }
-    } : {
-        hidden: { y: -20 },
-        visible: { 
-            y: 0,
-            transition: { duration: 2, ease: "easeOut" }
-        }
-    };
-      const variantsMenu = isTabletOrMobile ? {
+
+  const variantsLogo = !isLarge ? {
+    hidden: { x: -100 },
+    visible: { 
+        x: 0,
+        transition: { duration: 2, ease: "easeOut" }
+    }
+  } : {
+    hidden: { y: -20 },
+    visible: { 
+        y: 0,
+        transition: { duration: 2, ease: "easeOut" }
+    }
+  };
+  
+      const variantsMenu = !isLarge ? {
         hidden: { y: 100 },
         visible: { 
           y: 0,
@@ -44,7 +40,7 @@ function Navbar() {
           transition: { duration: 2, ease: "easeOut" }
         }
       }
-      const variantsButton = isTabletOrMobile ? {
+      const variantsButton = !isLarge ? {
         hidden: { x: 100 },
         visible: { 
             x: 0,
@@ -86,7 +82,7 @@ function Navbar() {
               variants={variantsLogo}
               
             >
-            <Image src={navLogo} width={100} height={100} alt='logo'/>
+            <Image src={navLogo} width={100} height={100} alt='logo' className=''/>
               
                 </motion.div> 
         </div>
@@ -108,7 +104,7 @@ function Navbar() {
               variants={variantsLogo}
               >
 
-            <Image src={navLogo} width={100} height={100} alt='logo'/>	
+            <Image src={navLogo} width={100} height={100} alt='logo' className=''/>	
               </motion.div>
         </div>
         <div className='w-full h-full flex flex-row justify-end items-center'>

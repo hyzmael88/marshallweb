@@ -49,16 +49,7 @@ function Contacto() {
     return;
   }
 }
-
-const [isTabletOrMobile, setIsTabletOrMobile] = useState(false); // valor inicial que se renderizará en el servidor
-
-useEffect(() => {
-  // lógica que calcula isTabletOrMobile
-  const isTabletOrMobile = window.innerWidth < 1224; // o cualquier lógica que estés utilizando
-
-  setIsTabletOrMobile(isTabletOrMobile);
-}, []);
-
+const isLarge = useMediaQuery({ query: "(min-width: 1024px)" });
 
     const [ref, inView] = useInView({
       triggerOnce: true, // Cambia a true para que la animación solo se ejecute una vez
@@ -70,7 +61,7 @@ useEffect(() => {
       triggerOnce: true, // Cambia a true para que la animación solo se ejecute una vez
     });
 
-    const variantsImage = isTabletOrMobile ? {
+    const variantsImage = !isLarge ? {
         hidden: { scale: 0.9 },
         visible: { 
           scale: 1,
@@ -85,7 +76,7 @@ useEffect(() => {
         }
       };
 
-      const variantsInputs = isTabletOrMobile ? {
+      const variantsInputs = !isLarge ? {
         hidden: { scale: 0.9 },
         visible: { 
           scale: 1,
@@ -100,7 +91,7 @@ useEffect(() => {
         }
       };
 
-    const variantsH1 = isTabletOrMobile ? {
+    const variantsH1 = !isLarge ? {
         hidden: { opacity: 0, y:0 },
         visible: { 
           y:0,
@@ -108,9 +99,11 @@ useEffect(() => {
           transition: { duration: 3, ease: "easeOut" }
         }
       } : {
-        hidden: { y: -100 },
+        hidden: { y: -100,
+        opacity: 0},
         visible: { 
           y: 0,
+          opacity: 1,
           transition: { duration: 3, ease: "easeOut" }
         }
       } 

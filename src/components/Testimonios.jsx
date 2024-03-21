@@ -6,13 +6,8 @@ import { useInView } from 'react-intersection-observer'; // Importa useInView
 
 function Testimonios() {
 
-  const [isTabletOrMobile, setIsTabletOrMobile] = useState(false); // valor inicial que se renderizará en el servidor
+  const isLarge = useMediaQuery({ query: "(min-width: 1024px)" });
 
-  useEffect(() => {
-    // lógica que calcula isTabletOrMobile
-    const isTabletOrMobile = window.innerWidth < 1224; // o cualquier lógica que estés utilizando
-    setIsTabletOrMobile(isTabletOrMobile);
-  }, []);
   const [ref, inView] = useInView({
     triggerOnce: true, // Cambia a true para que la animación solo se ejecute una vez
   });
@@ -30,7 +25,7 @@ function Testimonios() {
     })
   };
 
-  const variantsH1 = isTabletOrMobile ? {
+  const variantsH1 = !isLarge ? {
     hidden: { opacity: 0, y:0 },
     visible: { 
       y:0,
@@ -38,9 +33,11 @@ function Testimonios() {
       transition: { duration: 3, ease: "easeOut" }
     }
   } : {
-    hidden: { y: -100 },
+    hidden: { y: -100,
+    opacity: 0 },
     visible: { 
       y: 0,
+      opacity: 1,
       transition: { duration: 3, ease: "easeOut" }
     }
   } 

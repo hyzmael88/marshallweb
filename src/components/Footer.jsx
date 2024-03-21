@@ -44,7 +44,7 @@ function Footer() {
   return (
     <div className='w-full h-full xl:h-[529px] py-[64px] px-4 lg:px-14 flex flex-col lg:flex-row items-center gap-8 lg:gap-0 '>
         <div className='w-full h-full flex flex-col justify-center items-center lg:items-start text-center lg:text-start gap-[12px]'>
-          <Image src={logoFooter} alt='Logo' width={100} height={100} />
+          <Image src={logoFooter} alt='Logo' width={100} height={100} className=''/>
           <div className='w-full flex flex-col '>
 
           <h4 className='text-[14px] font-semibold '>Contacto</h4>

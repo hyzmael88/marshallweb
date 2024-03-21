@@ -30,13 +30,7 @@ function Acerca() {
         },
     ]
 
-    const [isTabletOrMobile, setIsTabletOrMobile] = useState(false); // valor inicial que se renderizará en el servidor
-
-    useEffect(() => {
-      // lógica que calcula isTabletOrMobile
-      const isTabletOrMobile = window.innerWidth < 1224; // o cualquier lógica que estés utilizando
-      setIsTabletOrMobile(isTabletOrMobile);
-    }, []);
+    const isLarge = useMediaQuery({ query: "(min-width: 1024px)" });
 
     const [ref, inView] = useInView({
       triggerOnce: true, // Cambia a true para que la animación solo se ejecute una vez
@@ -55,7 +49,7 @@ function Acerca() {
           }
         })
       };
-      const variantsH1 = isTabletOrMobile ? {
+      const variantsH1 = !isLarge ? {
         hidden: { opacity: 0, y:0 },
         visible: { 
           y:0,
@@ -63,9 +57,11 @@ function Acerca() {
           transition: { duration: 3, ease: "easeOut" }
         }
       } : {
-        hidden: { y: -100 },
+        hidden: { y: -100,
+        opacity: 0},
         visible: { 
           y: 0,
+          opacity: 1,
           transition: { duration: 3, ease: "easeOut" }
         }
       } 
@@ -96,7 +92,7 @@ de trapo industrial en el mercado</motion.h2>
             animate={inView2 ? "visible" : "hidden"}
             variants={variantsInfo}
             >
-                <Image src={item.icon} alt='icon' width={48} height={48} />
+                <Image src={item.icon} alt='icon' width={48} height={48} className='w-[48px]'/>
                 <h3 className='w-[60%] font-header font-bold text-[28px] text-center '>{item.title}</h3>
                 <p className=' w-[90%] font-paragraph text-[16px] text-center'>{item.description}</p>
                 

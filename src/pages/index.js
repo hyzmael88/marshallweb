@@ -27,7 +27,7 @@ export default function Home() {
         <meta property="og:url" content="www.productosindustrialesmarshall.com" />
         <meta name="twitter:card" content="/images/ogimage.png" />
       </Head>
-      <main className='w-full h-full max-w-[1444px] mx-auto relative min-w-[354px]'>
+      <main className='w-full h-full max-w-[1444px] mx-auto relative min-w-[354px] overflow-hidden'>
         <Navbar/>
         <Hero/>
         <Acerca/>
@@ -40,7 +40,7 @@ export default function Home() {
         <Jaizmora/>
         <a href="https://wa.me/+525517935266?text=Hola!%20me%20podrías%20dar%20mas%20información?" 
           style={{position: 'fixed', bottom: '25px', right: '25px', padding: '10px', backgroundColor: '#25D366', color: 'white', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '80px', height: '80px', textDecoration: 'none'}}>
-          <img src="/images/whatsapp.svg" alt="WhatsApp" style={{width: '48px', height: '48px'}}/>
+          <Image src="/images/whatsapp.svg" alt="WhatsApp" width={100} height={100} style={{width: '48px', height: '48px'}}/>
         </a>
       </main>
     </>
