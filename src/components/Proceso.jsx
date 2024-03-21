@@ -54,7 +54,7 @@ function Proceso() {
     }
   } 
 
-  const variantsBackground = isTabletOrMobile ? {
+  const variantsBackground = !isTabletOrMobile ? {
     hidden: { y: -20 },
     visible: { 
       y: 0,
@@ -82,8 +82,11 @@ function Proceso() {
   
 
   return (
-    <div className='w-full px-4 lg:px-14 h-full lg:h-[605px] flex flex-col lg:flex-row justify-between items-center py-[60px] gap-8 '>
-        <div className='w-full h-full flex flex-col items-center lg:items-start justify-center'>
+    <div  className='w-full px-4 lg:px-14 h-full lg:h-[605px] flex flex-col lg:flex-row justify-between items-center py-[60px] gap-8 '>
+        <div  className='w-full h-full flex flex-col items-center lg:items-start justify-center'>
+          {
+            console.log(inView)
+          }
         <motion.div 
         ref={ref}
          initial="hidden"

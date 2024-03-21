@@ -55,8 +55,10 @@ const [isTabletOrMobile, setIsTabletOrMobile] = useState(false); // valor inicia
 useEffect(() => {
   // lógica que calcula isTabletOrMobile
   const isTabletOrMobile = window.innerWidth < 1224; // o cualquier lógica que estés utilizando
+
   setIsTabletOrMobile(isTabletOrMobile);
 }, []);
+
 
     const [ref, inView] = useInView({
       triggerOnce: true, // Cambia a true para que la animación solo se ejecute una vez
