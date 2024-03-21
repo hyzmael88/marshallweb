@@ -83,7 +83,7 @@ function Proceso() {
          initial="hidden"
          animate={inView ? "visible" : "hidden"}
          variants={variantsBackground}
-        className='w-full lg:w-full 2xl:w-[721px] h-[270px] lg:h-[411px] rounded-[19px] bg-[#233E9E] flex flex-col  justify-center px-8 md:gap-4 lg:gap-0'>
+        className='w-full  2xl:w-[721px] h-[270px] lg:h-[411px] rounded-[19px] bg-[#233E9E] flex flex-col  justify-center px-8 md:gap-4 lg:gap-0'>
             <motion.h4 
              initial="hidden"
              animate={inView ? "visible" : "hidden"}
@@ -93,7 +93,7 @@ function Proceso() {
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
             variants={variantsH1}
-            className='w-full lg:w-[550px] font-header text-[32px] lg:text-[49px] font-bold leading-[38px] lg:leading-[59px] text-white md:text-center lg:text-start '>Cotiza, paga y recibe tu producto con facilidad. ¡Así de simple!</motion.h3>
+            className='w-full xl:w-[550px] font-header text-[32px] lg:text-[49px] font-bold leading-[38px] lg:leading-[59px] text-white md:text-center lg:text-start '>Cotiza, paga y recibe tu producto con facilidad. ¡Así de simple!</motion.h3>
         </motion.div>
         </div>
         
