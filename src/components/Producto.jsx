@@ -51,8 +51,8 @@ function Producto({ref3, inView3,producto, variantsInfo, activo, setActivo, inde
         
         <Image src={currentImage} width={1000} height={1000} className="w-full h-full object-cover rounded-[20px] lg:rounded-[40px]" alt="producto" />
         </div>
-
-      <div className=" h-[250px] w-full flex flex-col gap-[8px] ">
+{console.log(index)}
+      <div className={` h-[250px] ${producto.id == 7 ?"w-1/3" :"w-full"} flex flex-col gap-[8px]` }>
         <h5 className="font-header font-semibold text-[18px] h-[30px]">
           {producto.nombre}
         </h5>
@@ -70,7 +70,7 @@ function Producto({ref3, inView3,producto, variantsInfo, activo, setActivo, inde
         </p>
         <p className="font-paragraph text-[14px] leading-[21px]">
         <span className='font-bold'>Material: </span>
-          {producto.material}
+          {producto.material} 
         </p>
         <p className="font-paragraph text-[14px] leading-[21px]">
         <span className='font-bold'>Empaque: </span>{producto.empaque}

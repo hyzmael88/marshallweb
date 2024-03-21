@@ -215,12 +215,12 @@ function Productos() {
               </div>
             <div className="h-[250px] w-full flex flex-col gap-[8px] ">
               <h5 className="font-header font-semibold text-[18px]">
-                {producto.nombre}
+                {producto.nombre} 
               </h5>
               {
           producto.recomendacion&&
           <p className="font-paragraph text-[14px] leading-[21px]">
-          <span className='font-bold'>Recomendacion de uso: </span>{producto.recomendacion}
+          <span className='font-bold'>Recomendacion de uso: </span>{producto.recomendacion} 
         </p>
         }
              <p className="font-paragraph text-[14px] leading-[21px]">
