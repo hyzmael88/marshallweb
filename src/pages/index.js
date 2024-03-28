@@ -18,6 +18,7 @@ export default function Home() {
   return (
     <>
       <Head>
+
         <title>Productos Industriales Marshall</title>
         <meta name="description" content="Experimenta la más alta calidad de trapo industrial en el mercado, que harán la diferencia en tu negocio gracias a nuestra eficacia y versatilidad mejorando la productividad y eficiencia de tus instalaciones." />
         <meta name="keywords" content="trapo, trapo industrial, trapo tipo camiseta, trapo unido, trapo color" />
