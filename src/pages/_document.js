@@ -6,7 +6,11 @@ export default function Document() {
     <Html lang="es">
       <Head>
           {/* Google Tag Manager */}
-          <Script
+          
+          {/* End Google Tag Manager */}
+        </Head>
+      <body>
+      <Script
             id="gtm-script"
             strategy="afterInteractive"
             dangerouslySetInnerHTML={{
@@ -17,9 +21,6 @@ export default function Document() {
               })(window,document,'script','dataLayer','GTM-TKX27XQM');`,
             }}
           />
-          {/* End Google Tag Manager */}
-        </Head>
-      <body>
       <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKX27XQM"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <Main />
