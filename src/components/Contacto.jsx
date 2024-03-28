@@ -4,6 +4,7 @@ import { useMediaQuery } from 'react-responsive';
 import { useInView } from 'react-intersection-observer'; // Importa useInView
 import emailjs from '@emailjs/browser';
 import Image from 'next/image';
+import { sendGTMEvent } from '@next/third-parties/google';
 
 
 function Contacto() {
@@ -171,8 +172,10 @@ const isLarge = useMediaQuery({ query: "(min-width: 1024px)" });
             </div>
             <div className='w-full flex flex-row justify-center'>
             <button 
-            onClick={sendEmail}
-            className='w-[99px] h-[48px] bg-brand-primary rounded-[8px] lg:rounded-[14px] uppercase hover:scale-110 transition-all duration-300 '>Enviar</button>
+onClick={() => {
+  sendEmail();
+  sendGTMEvent('contacto', 'click', 'contacto');
+}}            className='w-[99px] h-[48px] bg-brand-primary rounded-[8px] lg:rounded-[14px] uppercase hover:scale-110 transition-all duration-300 '>Enviar</button>
             </div>
      
     </motion.div>
