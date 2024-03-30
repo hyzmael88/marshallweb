@@ -24,7 +24,7 @@ function Productos() {
     },
     {
       id: 2,
-      nombre: "Punta pastel",
+      nombre: "Punta de colores claros",
       image1: "/images/Trapos/PUNTA_PASTEL_017.jpg",
       image2: "/images/Trapos/PUNTA_PASTEL_018.jpg",
       image3: "/images/Trapos/PUNTA_PASTEL_019.jpg",
@@ -99,7 +99,7 @@ function Productos() {
     },
     {
       id: 7,
-      nombre: "Unido Pastel",
+      nombre: "Unido de colores claros",
       image1: "/images/Trapos/UNIDO_PASTEL_010.jpg",
       image2: "/images/Trapos/UNIDO_PASTEL_011.jpg",
       image3: "/images/Trapos/UNIDO_PASTEL_012.jpg",
