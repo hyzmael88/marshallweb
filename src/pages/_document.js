@@ -1,14 +1,16 @@
-import { GoogleTagManager } from '@next/third-parties/google'
 import { Html, Head, Main, NextScript } from 'next/document'
+import GoogleTagManager from '@next/third-parties/google'
 
 export default function Document() {
   return (
-    <Html lang="es">
+    <Html lang="es"
+    >
+      <GoogleTagManager 
+        gtmId='GTM-TKX27XQM'
+        />
       <Head />
       <body>
         <Main />
-        <GoogleTagManager gtmId="GTM-TKX27XQM" />
-      
         <NextScript />
       </body>
     </Html>
