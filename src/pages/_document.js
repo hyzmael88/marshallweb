@@ -20,6 +20,7 @@ export default function Document() {
             }}
           />
           {/* End Google Tag Manager */}
+        
         </Head>
         <body>
           {/* Google Tag Manager (noscript) */}
@@ -30,6 +31,17 @@ export default function Document() {
             }}
           />
           {/* End Google Tag Manager (noscript) */}
+          <script async src="https://www.googletagmanager.com/gtag/js?id=G-SD0K3WGGDH"></script>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-SD0K3WGGDH');
+              `,
+            }}
+          />
           <Main />
           <NextScript />
         </body>
