@@ -21,10 +21,10 @@ export default function Home() {
     <>
       <Head>
 
-        <title>Productos Industriales Marshall</title>
+        <title>Obtén las mejores telas industriales del mercado</title>
         <meta name="description" content="Experimenta la más alta calidad de trapo industrial en el mercado, que harán la diferencia en tu negocio gracias a nuestra eficacia y versatilidad mejorando la productividad y eficiencia de tus instalaciones." />
         <meta name="keywords" content="trapo, trapo industrial, trapo tipo camiseta, trapo unido, trapo color" />
-        <meta property="og:title" content="Productos Industriales Marshall" />
+        <meta property="og:title" content="Obtén las mejores telas industriales del mercado" />
         <meta property="og:description" content="Experimenta la más alta calidad de trapo industrial en el mercado, que harán la diferencia en tu negocio gracias a nuestra eficacia y versatilidad mejorando la productividad y eficiencia de tus instalaciones." />
         <meta property="og:image" content="/images/ogimage.png" />
         <meta property="og:url" content="www.productosindustrialesmarshall.com" />
@@ -33,11 +33,11 @@ export default function Home() {
       <main className='w-full h-full max-w-[1444px] mx-auto relative min-w-[354px] overflow-hidden'>
       
         <Navbar/>
+        <Productos/>
         <Hero/>
         <Acerca/>
         <HotspotImage/>
         <Proceso/>
-        <Productos/>
         <Testimonios/>
         <Contacto/>
         <Footer/>
