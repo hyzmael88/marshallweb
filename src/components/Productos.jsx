@@ -216,7 +216,7 @@ function Productos() {
         <h3 className="font-header font-bold text-[48px] relative">
           Productos
           <motion.div 
-            className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 h-1 bg-brand-primary rounded-full"
+            className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 h-1 bg-brand-secondary rounded-full"
             initial={{ width: 0 }}
             animate={{ width: '80%' }}
             transition={{ delay: 0.3, duration: 0.8 }}
@@ -398,7 +398,7 @@ function Productos() {
               animate={inView2 ? "visible" : "hidden"}
               variants={variantsInfo}
               className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === position / 3 ? "bg-brand-primary w-6" : "bg-gray-300"
+                index === position / 3 ? "bg-brand-secondary w-6" : "bg-gray-300"
               }`}
               onClick={() => setPosition(index * 3)}
             />
