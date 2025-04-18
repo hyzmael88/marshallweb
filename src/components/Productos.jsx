@@ -30,7 +30,7 @@ function Productos() {
       image3: "/images/Trapos/PUNTA_COLOR_031.jpg",
       recomendacion:
         " Industrial metálica, mecánica automotriz.",
-           descripcion:"Se caracteriza por tener extremos de diferentes colores.",
+           descripcion:"Son piezas multicolor",
         material: "Algodón",
         empaque: "Pacas de 5 a 50KG",
         
@@ -229,8 +229,8 @@ function Productos() {
           Conoce los tipos de trapo que manejamos y ¡cotiza hoy mismo!
         </h4>
         <p className="font-paragraph text-[16px] text-center mt-3 max-w-[800px]">
-          <span className="font-bold">Venta a partir de 50kg.</span> Envíos a partir de un pedido mínimo de <span className="font-bold">50kg</span>. 
-          Precios especiales de mayoreo a partir de <span className="font-bold">1 tonelada</span>.
+          <span className="font-bold">Venta minima de 50kg.</span> El flete corre por nuestra cuenta dentro de la CDMX
+         
         </p>
         <div className="mt-6">
           <a 
